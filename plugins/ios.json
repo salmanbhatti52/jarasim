@@ -1,0 +1,107 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-advanced-http": {
+      "ANDROIDBLACKLISTSECURESOCKETPROTOCOLS": "SSLv3,TLSv1",
+      "PACKAGE_NAME": "com.headhunters.app"
+    },
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "com.headhunters.app"
+    },
+    "cordova-plugin-androidx-adapter": {
+      "PACKAGE_NAME": "com.headhunters.app"
+    },
+    "cordova-plugin-appminimize": {
+      "PACKAGE_NAME": "com.headhunters.app"
+    },
+    "cordova-plugin-apprate": {
+      "PACKAGE_NAME": "com.headhunters.app"
+    },
+    "cordova-plugin-crop": {
+      "PACKAGE_NAME": "com.headhunters.app"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.headhunters.app"
+    },
+    "cordova-plugin-email-composer": {
+      "PACKAGE_NAME": "com.headhunters.app"
+    },
+    "cordova-plugin-facebook4": {
+      "APP_ID": "691375698089216",
+      "APP_NAME": "Quick Order",
+      "FACEBOOK_HYBRID_APP_EVENTS": "false",
+      "FACEBOOK_ANDROID_SDK_VERSION": "5.13.0",
+      "PACKAGE_NAME": "com.headhunters.app"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.headhunters.app"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.headhunters.app"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.headhunters.app"
+    },
+    "cordova-plugin-googleplus": {
+      "REVERSED_CLIENT_ID": "com.googleusercontent.apps.RaNdOmVaLuEs",
+      "PACKAGE_NAME": "com.headhunters.app"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.headhunters.app"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "com.headhunters.app"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "com.headhunters.app"
+    },
+    "cordova-plugin-nativegeocoder": {
+      "LOCATION_WHEN_IN_USE_DESCRIPTION": "Use geocoder service",
+      "PACKAGE_NAME": "com.headhunters.app"
+    },
+    "cordova-plugin-nativestorage": {
+      "PACKAGE_NAME": "com.headhunters.app"
+    },
+    "cordova-plugin-request-location-accuracy": {
+      "PACKAGE_NAME": "com.headhunters.app"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.headhunters.app"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.headhunters.app"
+    },
+    "cordova-plugin-telerik-imagepicker": {
+      "PHOTO_LIBRARY_USAGE_DESCRIPTION": " ",
+      "PACKAGE_NAME": "com.headhunters.app"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.headhunters.app"
+    },
+    "cordova-plugin-x-socialsharing": {
+      "PHOTO_LIBRARY_ADD_USAGE_DESCRIPTION": "This app requires photo library access to function properly.",
+      "PHOTO_LIBRARY_USAGE_DESCRIPTION": "This app requires photo library access to function properly.",
+      "PACKAGE_NAME": "com.headhunters.app"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "com.headhunters.app"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-add-swift-support": {
+      "PACKAGE_NAME": "com.headhunters.app"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "com.headhunters.app"
+    },
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "com.headhunters.app"
+    }
+  }
+}
