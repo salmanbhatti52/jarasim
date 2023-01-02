@@ -35,7 +35,7 @@ export class HomePage {
     hasMoreItems: boolean = true;
     cart: any;
     screenWidth: any = 300;
-    coupanarray:any;
+    coupanarray: any;
     //slideOpts = { effect: 'flip', autoplay: true, parallax: true, loop: true, lazy: true };
     constructor(private config: Config, public api: ApiService, private splashScreen: SplashScreen, public platform: Platform, public translateService: TranslateService, public data: Data, public settings: Settings, public product: Product, public loadingController: LoadingController, public router: Router, public navCtrl: NavController, public route: ActivatedRoute, private oneSignal: OneSignal, private nativeStorage: NativeStorage) {
         this.filter.page = 1;
@@ -82,10 +82,10 @@ export class HomePage {
 
         //this.getcoupan()
     }
-    getcoupan(){
-        this.api.coupanservice('eg_get_couponspromo',{}).subscribe(res => {
-            console.log('eg_get_couponspromo=====',res);
-            this.coupanarray=res
+    getcoupan() {
+        this.api.coupanservice('eg_get_couponspromo', {}).subscribe(res => {
+            console.log('eg_get_couponspromo=====', res);
+            this.coupanarray = res
         }, err => {
             console.log(err);
         });
@@ -193,7 +193,7 @@ export class HomePage {
         // const results = this.data.categories.filter(item => item.parent === parseInt(id));
         const results = this.data.categories;
 
-        console.log('rs----', results)
+        // console.log('rs----', results)
         return results;
     }
     getCategory(id) {

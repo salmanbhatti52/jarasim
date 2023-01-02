@@ -10,19 +10,19 @@
           "NSCameraUsageDescription": [
             {
               "xml": "<string>You can take photos</string>",
-              "count": 8
+              "count": 4
             }
           ],
           "NSLocationAlwaysUsageDescription": [
             {
               "xml": "<string>To view on map</string>",
-              "count": 4
+              "count": 2
             }
           ],
           "NSLocationWhenInUseUsageDescription": [
             {
               "xml": "<string>To view on map</string>",
-              "count": 4
+              "count": 2
             },
             {
               "xml": "<string>Use geocoder service</string>",
@@ -32,19 +32,19 @@
           "LSApplicationQueriesSchemes": [
             {
               "xml": "<string>fbapi</string>",
-              "count": 4
+              "count": 2
             },
             {
               "xml": "<string>fb-messenger-share-api</string>",
-              "count": 4
+              "count": 2
             },
             {
               "xml": "<string>fbauth2</string>",
-              "count": 4
+              "count": 2
             },
             {
               "xml": "<string>fbshareextension</string>",
-              "count": 4
+              "count": 2
             },
             {
               "xml": "<array><string>mailto</string></array>",

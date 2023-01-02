@@ -2,8 +2,8 @@
 source 'https://cdn.cocoapods.org/'
 platform :ios, '11.0'
 use_frameworks!
-target 'Jarasim' do
-	project 'Jarasim.xcodeproj'
+target 'D:\najam\jarasim\platforms\ios\Jarasim' do
+	project 'D:\najam\jarasim\platforms\ios\Jarasim.xcodeproj'
 	pod 'FBSDKCoreKit', '5.15.0'
 	pod 'FBSDKLoginKit', '5.15.0'
 	pod 'FBSDKShareKit', '5.15.0'
