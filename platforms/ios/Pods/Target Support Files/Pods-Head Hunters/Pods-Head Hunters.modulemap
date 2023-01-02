@@ -1,6 +1,0 @@
-framework module Pods_Head_Hunters {
-  umbrella header "Pods-Head Hunters-umbrella.h"
-
-  export *
-  module * { export * }
-}
