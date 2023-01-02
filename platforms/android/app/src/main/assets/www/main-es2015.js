@@ -2086,7 +2086,7 @@ let HomePage = class HomePage {
             }, error => console.error(error));
             this.getBlocks();
         });
-        this.getcoupan();
+        //this.getcoupan()
     }
     getcoupan() {
         this.api.coupanservice('eg_get_couponspromo', {}).subscribe(res => {

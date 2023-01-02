@@ -22,9 +22,11 @@
 
   <!-- Drop down type category block -->
   <div *ngFor="let main of data.mainCategories; let i = index">
-    <!--<div
+    <!--
+      <div
       *ngIf=" main.name == 'THC Products' || main.name == 'Vapes' || main.name == 'Hand Pipes' || main.name == 'Vaporizers' || main.name == 'Water Pipes' || main.name == 'Grinders'"
-      class="category-container">-->
+      class="category-container">
+    -->
       <ion-grid class="categories-card5" no-padding>
         <ion-row (click)="showSubCategory(i)"><ion-col class="ion-text-center">
             <ion-item lines="none">
@@ -54,7 +56,9 @@
           </ion-col>
         </ion-row>
       </ion-grid>
-    <!---</div>-->
+    <!--
+      </div>
+      -->
   </div>
 
   <!-- Catgories Grid 1 -->

@@ -80,7 +80,7 @@ export class HomePage {
             this.getBlocks();
         });
 
-        this.getcoupan()
+        //this.getcoupan()
     }
     getcoupan(){
         this.api.coupanservice('eg_get_couponspromo',{}).subscribe(res => {

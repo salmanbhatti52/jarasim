@@ -3113,8 +3113,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             });
 
             _this25.getBlocks();
-          });
-          this.getcoupan();
+          }); //this.getcoupan()
         }
       }, {
         key: "getcoupan",
