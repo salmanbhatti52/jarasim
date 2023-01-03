@@ -302,3 +302,4 @@ Toast.style = {
 /***/ })
 
 }]);
+//# sourceMappingURL=40-es2015.js.map
