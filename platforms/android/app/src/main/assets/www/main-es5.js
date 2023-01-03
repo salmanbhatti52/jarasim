@@ -2480,7 +2480,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         value: function getSubCategories(id) {
           // const results = this.data.categories.filter(item => item.parent === parseInt(id));
           var results = this.data.categories;
-          console.log('rs----', results);
+          // console.log('rs----', results)
           return results;
         }
       }, {

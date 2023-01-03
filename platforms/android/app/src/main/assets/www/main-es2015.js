@@ -2199,7 +2199,7 @@ let HomePage = class HomePage {
     getSubCategories(id) {
         // const results = this.data.categories.filter(item => item.parent === parseInt(id));
         const results = this.data.categories;
-        console.log('rs----', results);
+        // console.log('rs----', results)
         return results;
     }
     getCategory(id) {

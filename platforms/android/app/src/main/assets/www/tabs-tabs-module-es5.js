@@ -134,7 +134,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
 
     __webpack_require__.r(__webpack_exports__);
     /* harmony default export */
-    __webpack_exports__["default"] = "<ion-header>\n  <ion-toolbar style=\"padding-top: 28px !important;\n  padding-bottom: 0px;\">\n    <ion-buttons slot=\"start\" (click)=\"close(false)\">\n      <ion-back-button defaultHref=\"/tabs/account\"></ion-back-button>\n    </ion-buttons>\n    <ion-title>{{\"Login\" | translate}}</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content fullscreen=\"true\">\n  <div class=\"logo-block\">\n    <ion-grid>\n      <!--ion-row class=\"ion-align-items-center\">\n      <ion-col *ngFor=\"let item of icons; let i = index\" size=\"2\" size-md=\"2\" class=\"ion-align-self-center\">\n        <ion-icon *ngIf=\"i % 2\" name=\"heart-outline\"></ion-icon>\n        <ion-icon *ngIf=\"!(i % 2)\" name=\"star-outline\"></ion-icon>\n      </ion-col>\n      </ion-row-->\n      <img class=\"logo\" src=\"assets/image/logo.png\">\n    </ion-grid>\n  </div>\n  <ion-segment scrollable=\"true\" mode=\"md\" color=\"warning\" value=\"{{segment}}\" (ionChange)=\"segmentChanged($event)\">\n    <ion-segment-button color=\"warning\" value=\"login\">\n      <ion-label>{{\"Login\"| translate}}</ion-label>\n    </ion-segment-button>\n    <ion-segment-button color=\"warning\" value=\"register\">\n      <ion-label>{{\"Register\"| translate}}</ion-label>\n    </ion-segment-button>\n  </ion-segment>\n\n  <div class=\"login1\">\n    <ion-card mode=\"{{settings.settings.mode}}\">\n      <div class=\"form\" *ngIf=\"segment == 'login'\">\n        <ion-list>\n          <form [formGroup]=\"form\">\n            <ion-item mode=\"md\">\n              <ion-icon slot=\"start\" name=\"person\" mode=\"md\"></ion-icon>\n              <ion-input type=\"text\" formControlName=\"username\" placeholder=\"{{'Email/Username' | translate}}\">\n              </ion-input>\n            </ion-item>\n            <ion-item mode=\"md\">\n              <ion-icon slot=\"start\" name=\"eye\" mode=\"md\"></ion-icon>\n              <ion-input type=\"password\" formControlName=\"password\" placeholder=\"{{'Password' | translate}}\">\n              </ion-input>\n            </ion-item>\n          </form>\n          <!--br/>\n                <p style=\"text-align: center;\">-- OR --</p>\n              <br/>\n              <form [formGroup]=\"formSMS\">\n              <ion-item mode=\"md\">\n                <ion-input style=\"max-width: 40px;\" type=\"text\" formControlName=\"country_code\" placeholder=\"{{formSMS.value.country_code}}\"></ion-input>\n                <ion-input type=\"text\" formControlName=\"phone\" placeholder=\"{{'Mobile Number' | translate}}\"></ion-input>\n                </ion-item>\n                <ion-item mode=\"md\">\n                <ion-input type=\"number\" formControlName=\"sms\" placeholder=\"{{'SMS Code' | translate}}\"></ion-input>\n                <p slot=\"end\">{{\"Get Code\"| translate}}</p>\n              </ion-item>\n             </form-->\n        </ion-list>\n        <ion-button fill=\"solid\" mode=\"md\" color=\"{{settings.theme.button}}\" expand=\"block\"\n          [disabled]=\"disableSubmit || (!formSMS.valid && !form.valid)\" (click)=\"onSubmit()\">{{\"Login\"| translate}}\n        </ion-button>\n        <ion-button style=\"margin-top: 0px;\" color=\"dark\" expand=\"full\" fill=\"clear\" (click)=\"forgotton()\">{{\"Forgot\n          Password\"| translate}}?</ion-button>\n        <div class=\"errors\" *ngIf=\"errors\">\n          <div *ngFor=\"let error of errors | keys\" style=\"text-align: center; padding-top: 10px;\">\n            <ion-label color=\"danger\" [innerHTML]=\"error.value\"></ion-label>\n          </div>\n        </div>\n      </div>\n\n\n\n      <div class=\"form\" *ngIf=\"segment == 'register'\">\n        <ion-list>\n          <form [formGroup]=\"formRegister\">\n            <ion-item mode=\"md\">\n              <ion-icon slot=\"start\" name=\"person\" mode=\"md\"></ion-icon>\n              <ion-input required type=\"text\" formControlName=\"first_name\" placeholder=\"{{'First Name' | translate}}\">\n              </ion-input>\n            </ion-item>\n            <ion-item mode=\"md\">\n              <ion-icon slot=\"start\" name=\"person\" mode=\"md\"></ion-icon>\n              <ion-input required type=\"text\" formControlName=\"last_name\" placeholder=\"{{'Last Name' | translate}}\">\n              </ion-input>\n            </ion-item>\n            <ion-item mode=\"md\">\n              <ion-icon slot=\"start\" name=\"call\" mode=\"md\"></ion-icon>\n              <ion-input required type=\"text\" formControlName=\"phone\" placeholder=\"{{'Phone' | translate}}\"></ion-input>\n            </ion-item>\n            <ion-item mode=\"md\">\n              <ion-icon slot=\"start\" name=\"mail\" mode=\"md\"></ion-icon>\n              <ion-input required type=\"email\" formControlName=\"email\" placeholder=\"{{'Email/Username' | translate}}\">\n              </ion-input>\n            </ion-item>\n            <ion-item mode=\"md\">\n              <ion-icon slot=\"start\" name=\"eye\" mode=\"md\"></ion-icon>\n              <ion-input required type=\"password\" formControlName=\"password\" placeholder=\"{{'Password' | translate}}\">\n              </ion-input>\n            </ion-item>\n          </form>\n          <ion-button shape=\"undefined\" mode=\"md\" color=\"{{settings.theme.button}}\" expand=\"block\" fill=\"solid\"\n            (click)=\"onRegister()\">{{\"Register\" | translate}}</ion-button>\n        </ion-list>\n\n        <div class=\"errors\" *ngIf=\"errorsRegister\">\n          <div *ngFor=\"let error of errorsRegister | keys\" style=\"text-align: center; padding: 8px; margin-top: 16px;\">\n            <ion-label color=\"danger\" class=\"error\" [innerHTML]=\"error.value\"></ion-label>\n          </div>\n        </div>\n      </div>\n\n\n    </ion-card>\n\n    <ion-grid class=\"socila-login\">\n      <ion-row>\n        <ion-col size=\"6\">\n          <ion-button expand=\"full\" shape=\"undefined\" mode=\"md\" fill=\"solid\" color=\"google\" (click)=\"googleLogin()\"\n            [disabled]=\"googleLogingInn\">\n            <ion-icon slot=\"start\" name=\"logo-google\"></ion-icon>{{\"Google\"| translate}}\n          </ion-button>\n          <br />\n        </ion-col>\n        <ion-col size=\"6\">\n          <ion-button expand=\"full\" shape=\"undefined\" mode=\"md\" fill=\"solid\" color=\"facebook\" (click)=\"facebookLogin()\"\n            [disabled]=\"facebookLogingInn\">\n            <ion-icon slot=\"start\" name=\"logo-facebook\"></ion-icon>{{\"Facebook\"| translate}}\n          </ion-button>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </div>\n\n\n\n</ion-content>";
+    __webpack_exports__["default"] = "<ion-header>\n  <ion-toolbar style=\"padding-top: 28px !important;\n  padding-bottom: 0px;\">\n    <ion-buttons slot=\"start\" (click)=\"close(false)\">\n      <ion-back-button defaultHref=\"/tabs/account\"></ion-back-button>\n    </ion-buttons>\n    <ion-title>{{\"Login\" | translate}}</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content fullscreen=\"true\">\n  <div class=\"logo-block\">\n    <ion-grid>\n      <!--ion-row class=\"ion-align-items-center\">\n      <ion-col *ngFor=\"let item of icons; let i = index\" size=\"2\" size-md=\"2\" class=\"ion-align-self-center\">\n        <ion-icon *ngIf=\"i % 2\" name=\"heart-outline\"></ion-icon>\n        <ion-icon *ngIf=\"!(i % 2)\" name=\"star-outline\"></ion-icon>\n      </ion-col>\n      </ion-row-->\n      <img class=\"logo\" src=\"assets/image/logo.png\">\n    </ion-grid>\n  </div>\n  <ion-segment scrollable=\"true\" mode=\"md\" color=\"warning\" value=\"{{segment}}\" (ionChange)=\"segmentChanged($event)\">\n    <ion-segment-button color=\"warning\" value=\"login\">\n      <ion-label>{{\"Login\"| translate}}</ion-label>\n    </ion-segment-button>\n    <ion-segment-button color=\"warning\" value=\"register\">\n      <ion-label>{{\"Register\"| translate}}</ion-label>\n    </ion-segment-button>\n  </ion-segment>\n\n  <div class=\"login1\">\n    <ion-card mode=\"{{settings.settings.mode}}\">\n      <div class=\"form\" *ngIf=\"segment == 'login'\">\n        <ion-list>\n          <form [formGroup]=\"form\">\n            <ion-item mode=\"md\">\n              <ion-icon slot=\"start\" name=\"person\" mode=\"md\"></ion-icon>\n              <ion-input type=\"text\" formControlName=\"username\" placeholder=\"{{'Email/Username' | translate}}\">\n              </ion-input>\n            </ion-item>\n            <ion-item mode=\"md\">\n              <ion-icon slot=\"start\" name=\"eye\" mode=\"md\"></ion-icon>\n              <ion-input type=\"password\" formControlName=\"password\" placeholder=\"{{'Password' | translate}}\">\n              </ion-input>\n            </ion-item>\n          </form>\n          <!--br/>\n                <p style=\"text-align: center;\">-- OR --</p>\n              <br/>\n              <form [formGroup]=\"formSMS\">\n              <ion-item mode=\"md\">\n                <ion-input style=\"max-width: 40px;\" type=\"text\" formControlName=\"country_code\" placeholder=\"{{formSMS.value.country_code}}\"></ion-input>\n                <ion-input type=\"text\" formControlName=\"phone\" placeholder=\"{{'Mobile Number' | translate}}\"></ion-input>\n                </ion-item>\n                <ion-item mode=\"md\">\n                <ion-input type=\"number\" formControlName=\"sms\" placeholder=\"{{'SMS Code' | translate}}\"></ion-input>\n                <p slot=\"end\">{{\"Get Code\"| translate}}</p>\n              </ion-item>\n             </form-->\n        </ion-list>\n        <ion-button fill=\"solid\" mode=\"md\" color=\"{{settings.theme.button}}\" expand=\"block\"\n          [disabled]=\"disableSubmit || (!formSMS.valid && !form.valid)\" (click)=\"onSubmit()\">{{\"Login\"| translate}}\n        </ion-button>\n        <ion-button style=\"margin-top: 0px;\" color=\"dark\" expand=\"full\" fill=\"clear\" (click)=\"forgotton()\">{{\"Forgot\n          Password\"| translate}}?</ion-button>\n        <div class=\"errors\" *ngIf=\"errors\">\n          <div *ngFor=\"let error of errors | keys\" style=\"text-align: center; padding-top: 10px;\">\n            <ion-label color=\"danger\" [innerHTML]=\"error.value\"></ion-label>\n          </div>\n        </div>\n      </div>\n\n\n\n      <div class=\"form\" *ngIf=\"segment == 'register'\">\n        <ion-list>\n          <form [formGroup]=\"formRegister\">\n            <ion-item mode=\"md\">\n              <ion-icon slot=\"start\" name=\"person\" mode=\"md\"></ion-icon>\n              <ion-input required type=\"text\" formControlName=\"first_name\" placeholder=\"{{'First Name' | translate}}\">\n              </ion-input>\n            </ion-item>\n            <ion-item mode=\"md\">\n              <ion-icon slot=\"start\" name=\"person\" mode=\"md\"></ion-icon>\n              <ion-input required type=\"text\" formControlName=\"last_name\" placeholder=\"{{'Last Name' | translate}}\">\n              </ion-input>\n            </ion-item>\n            <ion-item mode=\"md\">\n              <ion-icon slot=\"start\" name=\"call\" mode=\"md\"></ion-icon>\n              <ion-input required type=\"text\" formControlName=\"phone\" placeholder=\"{{'Phone' | translate}}\"></ion-input>\n            </ion-item>\n            <ion-item mode=\"md\">\n              <ion-icon slot=\"start\" name=\"mail\" mode=\"md\"></ion-icon>\n              <ion-input required type=\"email\" formControlName=\"email\" placeholder=\"{{'Email/Username' | translate}}\">\n              </ion-input>\n            </ion-item>\n            <ion-item mode=\"md\">\n              <ion-icon slot=\"start\" name=\"eye\" mode=\"md\"></ion-icon>\n              <ion-input required type=\"password\" formControlName=\"password\" placeholder=\"{{'Password' | translate}}\">\n              </ion-input>\n            </ion-item>\n          </form>\n          <ion-button shape=\"undefined\" mode=\"md\" color=\"{{settings.theme.button}}\" expand=\"block\" fill=\"solid\"\n            (click)=\"onRegister()\">{{\"Register\" | translate}}</ion-button>\n        </ion-list>\n\n        <div class=\"errors\" *ngIf=\"errorsRegister\">\n          <div *ngFor=\"let error of errorsRegister | keys\" style=\"text-align: center; padding: 8px; margin-top: 16px;\">\n            <ion-label color=\"danger\" class=\"error\" [innerHTML]=\"error.value\"></ion-label>\n          </div>\n        </div>\n      </div>\n\n\n    </ion-card>\n\n    <!--\n    <ion-grid class=\"socila-login\">\n      <ion-row>\n        <ion-col size=\"6\">\n          <ion-button expand=\"full\" shape=\"undefined\" mode=\"md\" fill=\"solid\" color=\"google\" (click)=\"googleLogin()\"\n            [disabled]=\"googleLogingInn\">\n            <ion-icon slot=\"start\" name=\"logo-google\"></ion-icon>{{\"Google\"| translate}}\n          </ion-button>\n          <br />\n        </ion-col>\n        <ion-col size=\"6\">\n          <ion-button expand=\"full\" shape=\"undefined\" mode=\"md\" fill=\"solid\" color=\"facebook\" (click)=\"facebookLogin()\"\n            [disabled]=\"facebookLogingInn\">\n            <ion-icon slot=\"start\" name=\"logo-facebook\"></ion-icon>{{\"Facebook\"| translate}}\n          </ion-button>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n    -->\n  </div>\n\n\n\n</ion-content>";
 
     /***/
   },
@@ -1909,65 +1909,121 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
             }, _callee14, this);
           }));
         }
+        // googleLogin() {
+        //     this.googleLogingInn = true;
+        //     this.presentLoading();
+        //     this.googlePlus.login({})
+        //         .then(res => {
+        //             this.googleStatus = res;
+        //             this.api.postItem('google_login', {
+        //                 "access_token": this.googleStatus.userId,
+        //                 "email": this.googleStatus.email,
+        //                 "first_name": this.googleStatus.givenName,
+        //                 "last_name": this.googleStatus.familyName,
+        //                 "display_name": this.googleStatus.displayName,
+        //                 "image": this.googleStatus.imageUrl
+        //             }).then(res => {
+        //                 this.status = res;
+        //                 if (this.status.errors) {
+        //                     this.errors = this.status.errors;
+        //                 } else if (this.status.data) {
+        //                     this.settings.customer.id = this.status.ID;
+        //                     if (this.platform.is('cordova')) {
+        //                         this.oneSignal.getIds().then((data: any) => {
+        //                             this.form.onesignal_user_id = data.userId;
+        //                             this.form.onesignal_push_token = data.pushToken;
+        //                         });
+        //                         this.api.postItem('update_user_notification', this.form).then(res => { });
+        //                     }
+        //                     if (this.status.allcaps.wc_product_vendors_admin_vendor || this.status.allcaps.dc_vendor || this.status.allcaps.seller || this.status.allcaps.wcfm_vendor) {
+        //                         this.settings.vendor = true;
+        //                     }
+        //                     if (this.status.allcaps.administrator) {
+        //                         this.settings.administrator = true;
+        //                     }
+        //                     this.close(true);
+        //                 }
+        //                 this.googleLogingInn = false;
+        //                 this.dismissLoading();
+        //             }, err => {
+        //                 this.googleLogingInn = false;
+        //                 this.dismissLoading();
+        //             });
+        //             this.googleLogingInn = false;
+        //         })
+        //         .catch(err => {
+        //             this.googleStatus = err;
+        //             this.googleLogingInn = false;
+        //             this.dismissLoading();
+        //         });
+        // }
+        // facebookLogin() {
+        //     this.facebookLogingInn = true;
+        //     this.facebook.login(['public_profile', 'email'])
+        //         .then((res: FacebookLoginResponse) => {
+        //             this.faceBookStatus = res;
+        //             this.presentLoading();
+        //             this.api.postItem('facebook_login', {
+        //                 "access_token": this.faceBookStatus.authResponse.accessToken,
+        //             }).then(res => {
+        //                 this.status = res;
+        //                 if (this.status.errors) {
+        //                     this.errors = this.status.errors;
+        //                 } else if (this.status.data) {
+        //                     this.settings.customer.id = this.status.ID;
+        //                     if (this.platform.is('cordova')) {
+        //                         this.oneSignal.getIds().then((data: any) => {
+        //                             this.form.onesignal_user_id = data.userId;
+        //                             this.form.onesignal_push_token = data.pushToken;
+        //                         });
+        //                         this.api.postItem('update_user_notification', this.form).then(res => { });
+        //                     }
+        //                     if (this.status.allcaps.wc_product_vendors_admin_vendor || this.status.allcaps.dc_vendor || this.status.allcaps.seller || this.status.allcaps.wcfm_vendor) {
+        //                         this.settings.vendor = true;
+        //                     }
+        //                     if (this.status.allcaps.administrator) {
+        //                         this.settings.administrator = true;
+        //                     }
+        //                     this.close(true);
+        //                 }
+        //                 this.facebookLogingInn = false;
+        //                 this.dismissLoading();
+        //             }, err => {
+        //                 this.facebookLogingInn = false;
+        //                 this.dismissLoading();
+        //             });
+        //             this.facebookLogingInn = false;
+        //         })
+        //         .catch(e => {
+        //             this.faceBookStatus = e;
+        //             this.facebookLogingInn = false;
+        //             this.dismissLoading();
+        //         });
+        // }
       }, {
-        key: "googleLogin",
-        value: function googleLogin() {
+        key: "loginWithPhone",
+        value: function loginWithPhone() {
           var _this15 = this;
-          this.googleLogingInn = true;
-          this.presentLoading();
-          this.googlePlus.login({}).then(function (res) {
-            _this15.googleStatus = res;
-            _this15.api.postItem('google_login', {
-              "access_token": _this15.googleStatus.userId,
-              "email": _this15.googleStatus.email,
-              "first_name": _this15.googleStatus.givenName,
-              "last_name": _this15.googleStatus.familyName,
-              "display_name": _this15.googleStatus.displayName,
-              "image": _this15.googleStatus.imageUrl
-            }).then(function (res) {
-              _this15.status = res;
-              if (_this15.status.errors) {
-                _this15.errors = _this15.status.errors;
-              } else if (_this15.status.data) {
-                _this15.settings.customer.id = _this15.status.ID;
-                if (_this15.platform.is('cordova')) {
-                  _this15.oneSignal.getIds().then(function (data) {
-                    _this15.form.onesignal_user_id = data.userId;
-                    _this15.form.onesignal_push_token = data.pushToken;
-                  });
-                  _this15.api.postItem('update_user_notification', _this15.form).then(function (res) {});
-                }
-                if (_this15.status.allcaps.wc_product_vendors_admin_vendor || _this15.status.allcaps.dc_vendor || _this15.status.allcaps.seller || _this15.status.allcaps.wcfm_vendor) {
-                  _this15.settings.vendor = true;
-                }
-                if (_this15.status.allcaps.administrator) {
-                  _this15.settings.administrator = true;
-                }
-                _this15.close(true);
-              }
-              _this15.googleLogingInn = false;
-              _this15.dismissLoading();
+          this.phoneLogingInn = true;
+          window.AccountKitPlugin.loginWithPhoneNumber({
+            useAccessToken: true,
+            defaultCountryCode: "IN",
+            facebookNotificationsEnabled: true
+          }, function (data) {
+            window.AccountKitPlugin.getAccount(function (info) {
+              return _this15.handlePhoneLogin(info);
             }, function (err) {
-              _this15.googleLogingInn = false;
-              _this15.dismissLoading();
+              return _this15.handlePhoneLogin(err);
             });
-            _this15.googleLogingInn = false;
-          })["catch"](function (err) {
-            _this15.googleStatus = err;
-            _this15.googleLogingInn = false;
-            _this15.dismissLoading();
           });
         }
       }, {
-        key: "facebookLogin",
-        value: function facebookLogin() {
+        key: "handlePhoneLogin",
+        value: function handlePhoneLogin(info) {
           var _this16 = this;
-          this.facebookLogingInn = true;
-          this.facebook.login(['public_profile', 'email']).then(function (res) {
-            _this16.faceBookStatus = res;
-            _this16.presentLoading();
-            _this16.api.postItem('facebook_login', {
-              "access_token": _this16.faceBookStatus.authResponse.accessToken
+          if (info.phoneNumber) {
+            this.api.postItem('phone_number_login', {
+              "phone": info.phoneNumber
             }).then(function (res) {
               _this16.status = res;
               if (_this16.status.errors) {
@@ -1989,67 +2045,9 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                 }
                 _this16.close(true);
               }
-              _this16.facebookLogingInn = false;
-              _this16.dismissLoading();
+              _this16.phoneLogingInn = false;
             }, function (err) {
-              _this16.facebookLogingInn = false;
-              _this16.dismissLoading();
-            });
-            _this16.facebookLogingInn = false;
-          })["catch"](function (e) {
-            _this16.faceBookStatus = e;
-            _this16.facebookLogingInn = false;
-            _this16.dismissLoading();
-          });
-        }
-      }, {
-        key: "loginWithPhone",
-        value: function loginWithPhone() {
-          var _this17 = this;
-          this.phoneLogingInn = true;
-          window.AccountKitPlugin.loginWithPhoneNumber({
-            useAccessToken: true,
-            defaultCountryCode: "IN",
-            facebookNotificationsEnabled: true
-          }, function (data) {
-            window.AccountKitPlugin.getAccount(function (info) {
-              return _this17.handlePhoneLogin(info);
-            }, function (err) {
-              return _this17.handlePhoneLogin(err);
-            });
-          });
-        }
-      }, {
-        key: "handlePhoneLogin",
-        value: function handlePhoneLogin(info) {
-          var _this18 = this;
-          if (info.phoneNumber) {
-            this.api.postItem('phone_number_login', {
-              "phone": info.phoneNumber
-            }).then(function (res) {
-              _this18.status = res;
-              if (_this18.status.errors) {
-                _this18.errors = _this18.status.errors;
-              } else if (_this18.status.data) {
-                _this18.settings.customer.id = _this18.status.ID;
-                if (_this18.platform.is('cordova')) {
-                  _this18.oneSignal.getIds().then(function (data) {
-                    _this18.form.onesignal_user_id = data.userId;
-                    _this18.form.onesignal_push_token = data.pushToken;
-                  });
-                  _this18.api.postItem('update_user_notification', _this18.form).then(function (res) {});
-                }
-                if (_this18.status.allcaps.wc_product_vendors_admin_vendor || _this18.status.allcaps.dc_vendor || _this18.status.allcaps.seller || _this18.status.allcaps.wcfm_vendor) {
-                  _this18.settings.vendor = true;
-                }
-                if (_this18.status.allcaps.administrator) {
-                  _this18.settings.administrator = true;
-                }
-                _this18.close(true);
-              }
-              _this18.phoneLogingInn = false;
-            }, function (err) {
-              _this18.phoneLogingInn = false;
+              _this16.phoneLogingInn = false;
             });
           } else this.phoneLogingInn = false;
         }
@@ -2068,34 +2066,34 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "onRegister",
         value: function onRegister() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee15() {
-            var _this19 = this;
+            var _this17 = this;
             return _regeneratorRuntime().wrap(function _callee15$(_context15) {
               while (1) switch (_context15.prev = _context15.next) {
                 case 0:
                   this.disableSubmit = true;
                   _context15.next = 3;
                   return this.api.postItem('create-user', this.formRegister.value).then(function (res) {
-                    _this19.status = res;
-                    if (_this19.status.errors) {
-                      _this19.errorsRegister = _this19.status.errors;
-                      _this19.disableSubmit = false;
-                      for (var key in _this19.errors) {
-                        _this19.errorsRegister[key].forEach(function (item) {
+                    _this17.status = res;
+                    if (_this17.status.errors) {
+                      _this17.errorsRegister = _this17.status.errors;
+                      _this17.disableSubmit = false;
+                      for (var key in _this17.errors) {
+                        _this17.errorsRegister[key].forEach(function (item) {
                           return item.replace('<strong>ERROR<\/strong>:', '');
                         });
                       }
-                    } else if (_this19.status.data != undefined) {
-                      _this19.settings.customer.id = _this19.status.ID;
-                      if (_this19.platform.is('cordova')) _this19.oneSignal.getIds().then(function (data) {
-                        _this19.pushForm.onesignal_user_id = data.userId;
-                        _this19.pushForm.onesignal_push_token = data.pushToken;
-                        _this19.api.postItem('update_user_notification', _this19.pushForm).then(function (res) {});
+                    } else if (_this17.status.data != undefined) {
+                      _this17.settings.customer.id = _this17.status.ID;
+                      if (_this17.platform.is('cordova')) _this17.oneSignal.getIds().then(function (data) {
+                        _this17.pushForm.onesignal_user_id = data.userId;
+                        _this17.pushForm.onesignal_push_token = data.pushToken;
+                        _this17.api.postItem('update_user_notification', _this17.pushForm).then(function (res) {});
                       });
-                      _this19.close(true);
-                      _this19.disableSubmit = false;
-                    } else _this19.disableSubmit = false;
+                      _this17.close(true);
+                      _this17.disableSubmit = false;
+                    } else _this17.disableSubmit = false;
                   }, function (err) {
-                    _this19.disableSubmit = false;
+                    _this17.disableSubmit = false;
                   });
                 case 3:
                 case "end":
@@ -2232,13 +2230,13 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "ngAfterViewInit",
         value: function ngAfterViewInit() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee17() {
-            var _this20 = this;
+            var _this18 = this;
             return _regeneratorRuntime().wrap(function _callee17$(_context17) {
               while (1) switch (_context17.prev = _context17.next) {
                 case 0:
                   _context17.next = 2;
                   return this.api.postItem('locations').then(function (res) {
-                    _this20.processData(res);
+                    _this18.processData(res);
                     console.log(res);
                   }, function (err) {
                     console.log(err);
@@ -2254,7 +2252,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "processData",
         value: function processData(data) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee18() {
-            var _this21 = this;
+            var _this19 = this;
             var googleMaps, mapEle, map;
             return _regeneratorRuntime().wrap(function _callee18$(_context18) {
               while (1) switch (_context18.prev = _context18.next) {
@@ -2264,12 +2262,12 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                 case 2:
                   googleMaps = _context18.sent;
                   data.locations.map(function (item, index) {
-                    _this21.mapData[index] = {};
-                    _this21.mapData[index].name = item.title;
-                    _this21.mapData[index].lat = parseFloat(item.description);
-                    _this21.mapData[index].lng = parseFloat(item.url);
-                    if (index == 0) _this21.mapData[index].center = true;
-                    console.log(_this21.mapData);
+                    _this19.mapData[index] = {};
+                    _this19.mapData[index].name = item.title;
+                    _this19.mapData[index].lat = parseFloat(item.description);
+                    _this19.mapData[index].lng = parseFloat(item.url);
+                    if (index == 0) _this19.mapData[index].center = true;
+                    console.log(_this19.mapData);
                   });
                   mapEle = this.mapElement.nativeElement;
                   map = new googleMaps.Map(mapEle, {
@@ -2414,14 +2412,14 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "refundKey",
         value: function refundKey() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee19() {
-            var _this22 = this;
+            var _this20 = this;
             return _regeneratorRuntime().wrap(function _callee19$(_context19) {
               while (1) switch (_context19.prev = _context19.next) {
                 case 0:
                   _context19.next = 2;
                   return this.api.postItem('woo_refund_key').then(function (res) {
-                    _this22.refundKeys = res;
-                    console.log(_this22.refundKeys);
+                    _this20.refundKeys = res;
+                    console.log(_this20.refundKeys);
                   }, function (err) {
                     console.log(err);
                   });
@@ -2435,14 +2433,14 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this23 = this;
+          var _this21 = this;
           this.translate.get(['Refund request submitted!', 'Unable to submit the refund request']).subscribe(function (translations) {
-            _this23.lan.refund = translations['Refund request submitted!'];
-            _this23.lan.unable = translations['Unable to submit the refund request'];
+            _this21.lan.refund = translations['Refund request submitted!'];
+            _this21.lan.unable = translations['Unable to submit the refund request'];
           });
           this.filter.id = this.route.snapshot.paramMap.get('id');
           this.route.queryParams.subscribe(function (params) {
-            if (params["order"]) _this23.order = params["order"];else _this23.getOrder();
+            if (params["order"]) _this21.order = params["order"];else _this21.getOrder();
           });
           this.refundKey();
         }
@@ -2455,7 +2453,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "requestRefund",
         value: function requestRefund() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee20() {
-            var _this24 = this;
+            var _this22 = this;
             return _regeneratorRuntime().wrap(function _callee20$(_context20) {
               while (1) switch (_context20.prev = _context20.next) {
                 case 0:
@@ -2469,12 +2467,12 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                   this.refund.security = this.refundKeys.ywcars_submit_request;
                   _context20.next = 10;
                   return this.api.postItem('woo_refund_key', this.refund).then(function (res) {
-                    _this24.refundResponse = res;
-                    _this24.disableRefundButton = false;
-                    if (_this24.refundResponse.success) _this24.presentToast(_this24.lan.refund);else _this24.presentToast(_this24.lan.unable);
+                    _this22.refundResponse = res;
+                    _this22.disableRefundButton = false;
+                    if (_this22.refundResponse.success) _this22.presentToast(_this22.lan.refund);else _this22.presentToast(_this22.lan.unable);
                   }, function (err) {
                     console.log(err);
-                    _this24.disableRefundButton = false;
+                    _this22.disableRefundButton = false;
                   });
                 case 10:
                 case "end":
@@ -2510,7 +2508,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "getOrder",
         value: function getOrder() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee22() {
-            var _this25 = this;
+            var _this23 = this;
             var loading;
             return _regeneratorRuntime().wrap(function _callee22$(_context22) {
               while (1) switch (_context22.prev = _context22.next) {
@@ -2529,7 +2527,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                 case 5:
                   _context22.next = 7;
                   return this.api.postItem('order', this.filter).then(function (res) {
-                    _this25.order = res;
+                    _this23.order = res;
                     loading.dismiss();
                   }, function (err) {
                     console.log(err);
@@ -2638,13 +2636,13 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "getOrders",
         value: function getOrders() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee23() {
-            var _this26 = this;
+            var _this24 = this;
             return _regeneratorRuntime().wrap(function _callee23$(_context23) {
               while (1) switch (_context23.prev = _context23.next) {
                 case 0:
                   _context23.next = 2;
                   return this.api.postItem('orders', this.filter).then(function (res) {
-                    _this26.orders = res;
+                    _this24.orders = res;
                   }, function (err) {
                     console.log(err);
                   });
@@ -2659,16 +2657,16 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "loadData",
         value: function loadData(event) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee24() {
-            var _this27 = this;
+            var _this25 = this;
             return _regeneratorRuntime().wrap(function _callee24$(_context24) {
               while (1) switch (_context24.prev = _context24.next) {
                 case 0:
                   this.filter.page = this.filter.page + 1;
                   _context24.next = 3;
                   return this.api.postItem('orders', this.filter).then(function (res) {
-                    _this27.orders.push.apply(_this27.orders, res);
+                    _this25.orders.push.apply(_this25.orders, res);
                     event.target.complete();
-                    if (!res) _this27.hasMoreItems = false;
+                    if (!res) _this25.hasMoreItems = false;
                   }, function (err) {
                     event.target.complete();
                   });
@@ -2770,15 +2768,15 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "ngOnInit",
         value: function ngOnInit() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee25() {
-            var _this28 = this;
+            var _this26 = this;
             return _regeneratorRuntime().wrap(function _callee25$(_context25) {
               while (1) switch (_context25.prev = _context25.next) {
                 case 0:
                   _context25.next = 2;
                   return this.api.postItem('getPointsHistory').then(function (res) {
-                    _this28.points = res;
+                    _this26.points = res;
                     //this.settings.reward = res.points;
-                    _this28.settings.rewardValue = res.points_vlaue;
+                    _this26.settings.rewardValue = res.points_vlaue;
                   });
                 case 2:
                 case "end":
@@ -2883,34 +2881,34 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "onSubmit",
         value: function onSubmit() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee26() {
-            var _this29 = this;
+            var _this27 = this;
             return _regeneratorRuntime().wrap(function _callee26$(_context26) {
               while (1) switch (_context26.prev = _context26.next) {
                 case 0:
                   this.disableSubmit = true;
                   _context26.next = 3;
                   return this.api.postItem('create-user', this.form.value).then(function (res) {
-                    _this29.status = res;
-                    if (_this29.status.errors) {
-                      _this29.errors = _this29.status.errors;
-                      _this29.disableSubmit = false;
-                      for (var key in _this29.errors) {
-                        _this29.errors[key].forEach(function (item) {
+                    _this27.status = res;
+                    if (_this27.status.errors) {
+                      _this27.errors = _this27.status.errors;
+                      _this27.disableSubmit = false;
+                      for (var key in _this27.errors) {
+                        _this27.errors[key].forEach(function (item) {
                           return item.replace('<strong>ERROR<\/strong>:', '');
                         });
                       }
-                    } else if (_this29.status.data != undefined) {
-                      _this29.settings.customer.id = _this29.status.ID;
-                      if (_this29.platform.is('cordova')) _this29.oneSignal.getIds().then(function (data) {
-                        _this29.pushForm.onesignal_user_id = data.userId;
-                        _this29.pushForm.onesignal_push_token = data.pushToken;
-                        _this29.api.postItem('update_user_notification', _this29.pushForm).then(function (res) {});
+                    } else if (_this27.status.data != undefined) {
+                      _this27.settings.customer.id = _this27.status.ID;
+                      if (_this27.platform.is('cordova')) _this27.oneSignal.getIds().then(function (data) {
+                        _this27.pushForm.onesignal_user_id = data.userId;
+                        _this27.pushForm.onesignal_push_token = data.pushToken;
+                        _this27.api.postItem('update_user_notification', _this27.pushForm).then(function (res) {});
                       });
-                      _this29.navCtrl.navigateBack('/tabs/account');
-                      _this29.disableSubmit = false;
-                    } else _this29.disableSubmit = false;
+                      _this27.navCtrl.navigateBack('/tabs/account');
+                      _this27.disableSubmit = false;
+                    } else _this27.disableSubmit = false;
                   }, function (err) {
-                    _this29.disableSubmit = false;
+                    _this27.disableSubmit = false;
                   });
                 case 3:
                 case "end":
@@ -2922,7 +2920,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "loginWithPhone",
         value: function loginWithPhone() {
-          var _this30 = this;
+          var _this28 = this;
           this.phoneLogingInn = true;
           window.AccountKitPlugin.loginWithPhoneNumber({
             useAccessToken: true,
@@ -2930,43 +2928,43 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
             facebookNotificationsEnabled: true
           }, function (data) {
             window.AccountKitPlugin.getAccount(function (info) {
-              return _this30.handlePhoneLogin(info);
+              return _this28.handlePhoneLogin(info);
             }, function (err) {
-              return _this30.handlePhoneLogin(err);
+              return _this28.handlePhoneLogin(err);
             });
           });
         }
       }, {
         key: "handlePhoneLogin",
         value: function handlePhoneLogin(info) {
-          var _this31 = this;
+          var _this29 = this;
           if (info.phoneNumber) {
             this.api.postItem('phone_number_login', {
               "phone": info.phoneNumber
             }).then(function (res) {
-              _this31.status = res;
-              if (_this31.status.errors) {
-                _this31.errors = _this31.status.errors;
-              } else if (_this31.status.data) {
-                _this31.settings.customer.id = _this31.status.ID;
-                if (_this31.platform.is('cordova')) {
-                  _this31.oneSignal.getIds().then(function (data) {
-                    _this31.form.onesignal_user_id = data.userId;
-                    _this31.form.onesignal_push_token = data.pushToken;
+              _this29.status = res;
+              if (_this29.status.errors) {
+                _this29.errors = _this29.status.errors;
+              } else if (_this29.status.data) {
+                _this29.settings.customer.id = _this29.status.ID;
+                if (_this29.platform.is('cordova')) {
+                  _this29.oneSignal.getIds().then(function (data) {
+                    _this29.form.onesignal_user_id = data.userId;
+                    _this29.form.onesignal_push_token = data.pushToken;
                   });
-                  _this31.api.postItem('update_user_notification', _this31.form).then(function (res) {});
+                  _this29.api.postItem('update_user_notification', _this29.form).then(function (res) {});
                 }
-                if (_this31.status.allcaps.wc_product_vendors_admin_vendor || _this31.status.allcaps.dc_vendor || _this31.status.allcaps.seller || _this31.status.allcaps.wcfm_vendor) {
-                  _this31.settings.vendor = true;
+                if (_this29.status.allcaps.wc_product_vendors_admin_vendor || _this29.status.allcaps.dc_vendor || _this29.status.allcaps.seller || _this29.status.allcaps.wcfm_vendor) {
+                  _this29.settings.vendor = true;
                 }
-                if (_this31.status.allcaps.administrator) {
-                  _this31.settings.administrator = true;
+                if (_this29.status.allcaps.administrator) {
+                  _this29.settings.administrator = true;
                 }
-                _this31.navCtrl.navigateBack('/tabs/account');
+                _this29.navCtrl.navigateBack('/tabs/account');
               }
-              _this31.phoneLogingInn = false;
+              _this29.phoneLogingInn = false;
             }, function (err) {
-              _this31.phoneLogingInn = false;
+              _this29.phoneLogingInn = false;
             });
           } else this.phoneLogingInn = false;
         }
@@ -3070,13 +3068,13 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       _createClass(SettingPage, [{
         key: "applyLanguage",
         value: function applyLanguage() {
-          var _this32 = this;
+          var _this30 = this;
           this.translateService.setDefaultLang(this.config.lang);
           if (this.config.lang == 'ar') {
             this.settings.dir = 'rtl';
           } else this.settings.dir = 'ltr';
           this.translateService.get(['Back']).subscribe(function (translations) {
-            _this32.ionicConfig.set('backButtonText', translations['Back']);
+            _this30.ionicConfig.set('backButtonText', translations['Back']);
           });
           document.documentElement.setAttribute('dir', this.settings.dir);
           this.nativeStorage.setItem('settings', {
@@ -3188,13 +3186,13 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "getWallet",
         value: function getWallet() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee27() {
-            var _this33 = this;
+            var _this31 = this;
             return _regeneratorRuntime().wrap(function _callee27$(_context27) {
               while (1) switch (_context27.prev = _context27.next) {
                 case 0:
                   _context27.next = 2;
                   return this.api.postItem('wallet').then(function (res) {
-                    _this33.wallet = res;
+                    _this31.wallet = res;
                     console.log(res);
                   }, function (err) {
                     console.log(err);
@@ -3215,7 +3213,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "addTopup",
         value: function addTopup() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee28() {
-            var _this34 = this;
+            var _this32 = this;
             var loading;
             return _regeneratorRuntime().wrap(function _callee28$(_context28) {
               while (1) switch (_context28.prev = _context28.next) {
@@ -3242,12 +3240,12 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                     _wp_http_referer: '/my-account/woo-wallet/add/',
                     woo_add_to_wallet: 'Add'
                   }).then(function (res) {
-                    _this34.api.postItem('cart').then(function (res) {
-                      _this34.cart = res;
-                      _this34.data.updateCart(_this34.cart.cart_contents);
-                      _this34.show = false;
+                    _this32.api.postItem('cart').then(function (res) {
+                      _this32.cart = res;
+                      _this32.data.updateCart(_this32.cart.cart_contents);
+                      _this32.show = false;
                       loading.dismiss();
-                      _this34.navCtrl.navigateForward(_this34.router.url + '/cart');
+                      _this32.navCtrl.navigateForward(_this32.router.url + '/cart');
                     }, function (err) {
                       console.log(err);
                       loading.dismiss();
@@ -3399,13 +3397,13 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "getWishlist",
         value: function getWishlist() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee30() {
-            var _this35 = this;
+            var _this33 = this;
             return _regeneratorRuntime().wrap(function _callee30$(_context30) {
               while (1) switch (_context30.prev = _context30.next) {
                 case 0:
                   _context30.next = 2;
                   return this.api.postItem('get_wishlist').then(function (res) {
-                    _this35.wishlist = res;
+                    _this33.wishlist = res;
                   }, function (err) {
                     console.log(err);
                   });
@@ -3420,7 +3418,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "removeFromWishlist",
         value: function removeFromWishlist(id) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee31() {
-            var _this36 = this;
+            var _this34 = this;
             return _regeneratorRuntime().wrap(function _callee31$(_context31) {
               while (1) switch (_context31.prev = _context31.next) {
                 case 0:
@@ -3428,7 +3426,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                   return this.api.postItem('remove_wishlist', {
                     product_id: id
                   }).then(function (res) {
-                    _this36.wishlist = res;
+                    _this34.wishlist = res;
                   }, function (err) {
                     console.log(err);
                   });
@@ -3554,9 +3552,9 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       _createClass(CartPage, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this37 = this;
+          var _this35 = this;
           this.translate.get(['Requested quantity not available']).subscribe(function (translations) {
-            _this37.lan.lowQuantity = translations['Requested quantity not available'];
+            _this35.lan.lowQuantity = translations['Requested quantity not available'];
           });
         }
       }, {
@@ -3568,14 +3566,14 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "getCart",
         value: function getCart() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee32() {
-            var _this38 = this;
+            var _this36 = this;
             return _regeneratorRuntime().wrap(function _callee32$(_context32) {
               while (1) switch (_context32.prev = _context32.next) {
                 case 0:
                   _context32.next = 2;
                   return this.api.getcart('cart').then(function (res) {
-                    _this38.cart = res;
-                    _this38.data.updateCart(_this38.cart.cart_contents);
+                    _this36.cart = res;
+                    _this36.data.updateCart(_this36.cart.cart_contents);
                   }, function (err) {
                     console.log(err);
                   });
@@ -3603,14 +3601,14 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "deleteItem",
         value: function deleteItem(itemKey, qty) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee33() {
-            var _this39 = this;
+            var _this37 = this;
             return _regeneratorRuntime().wrap(function _callee33$(_context33) {
               while (1) switch (_context33.prev = _context33.next) {
                 case 0:
                   _context33.next = 2;
                   return this.api.delcartitem('remove_cart_item&item_key=' + itemKey).then(function (res) {
-                    _this39.cart = res;
-                    _this39.data.updateCart(_this39.cart.cart_contents);
+                    _this37.cart = res;
+                    _this37.data.updateCart(_this37.cart.cart_contents);
                   }, function (err) {
                     console.log(err);
                   });
@@ -3625,7 +3623,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "submitCoupon",
         value: function submitCoupon(coupon) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee34() {
-            var _this40 = this;
+            var _this38 = this;
             return _regeneratorRuntime().wrap(function _callee34$(_context34) {
               while (1) switch (_context34.prev = _context34.next) {
                 case 0:
@@ -3633,11 +3631,11 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                   return this.api.postItem('apply_coupon', {
                     coupon_code: coupon
                   }).then(function (res) {
-                    _this40.couponMessage = res;
-                    if (_this40.couponMessage != null && _this40.couponMessage.notice) {
-                      _this40.presentToast(_this40.couponMessage.notice);
+                    _this38.couponMessage = res;
+                    if (_this38.couponMessage != null && _this38.couponMessage.notice) {
+                      _this38.presentToast(_this38.couponMessage.notice);
                     }
-                    _this40.getCart();
+                    _this38.getCart();
                   }, function (err) {
                     console.log(err);
                   });
@@ -3652,7 +3650,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "removeCoupon",
         value: function removeCoupon(coupon) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee35() {
-            var _this41 = this;
+            var _this39 = this;
             return _regeneratorRuntime().wrap(function _callee35$(_context35) {
               while (1) switch (_context35.prev = _context35.next) {
                 case 0:
@@ -3660,7 +3658,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                   return this.api.postItem('remove_coupon', {
                     coupon: coupon
                   }).then(function (res) {
-                    _this41.getCart();
+                    _this39.getCart();
                   }, function (err) {
                     console.log(err);
                   });
@@ -3675,7 +3673,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "addToCart",
         value: function addToCart(id, item) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee36() {
-            var _this42 = this;
+            var _this40 = this;
             var params;
             return _regeneratorRuntime().wrap(function _callee36$(_context36) {
               while (1) switch (_context36.prev = _context36.next) {
@@ -3709,8 +3707,8 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                   params._wpnonce = this.cart.cart_nonce;
                   _context36.next = 17;
                   return this.api.addandremoveitem('update-cart-item-qty', params).then(function (res) {
-                    _this42.cart = res;
-                    _this42.data.updateCart(_this42.cart.cart_contents);
+                    _this40.cart = res;
+                    _this40.data.updateCart(_this40.cart.cart_contents);
                   }, function (err) {
                     console.log(err);
                   });
@@ -3725,7 +3723,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "deleteFromCart",
         value: function deleteFromCart(id, key) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee37() {
-            var _this43 = this;
+            var _this41 = this;
             var params;
             return _regeneratorRuntime().wrap(function _callee37$(_context37) {
               while (1) switch (_context37.prev = _context37.next) {
@@ -3749,8 +3747,8 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                   params._wpnonce = this.cart.cart_nonce;
                   _context37.next = 11;
                   return this.api.postItem('update-cart-item-qty', params).then(function (res) {
-                    _this43.cart = res;
-                    _this43.data.updateCart(_this43.cart.cart_contents);
+                    _this41.cart = res;
+                    _this41.data.updateCart(_this41.cart.cart_contents);
                   }, function (err) {
                     console.log(err);
                   });
@@ -3765,12 +3763,12 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "redeem",
         value: function redeem() {
-          var _this44 = this;
+          var _this42 = this;
           // wc_points_rewards_apply_discount_amount: 
           // wc_points_rewards_apply_discount: Apply Discount
           this.api.postItem('ajax_maybe_apply_discount').then(function (res) {
             console.log(res);
-            _this44.getCart();
+            _this42.getCart();
           });
         }
       }, {
@@ -3811,7 +3809,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "onSubmit",
         value: function onSubmit(userData) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee39() {
-            var _this45 = this;
+            var _this43 = this;
             return _regeneratorRuntime().wrap(function _callee39$(_context39) {
               while (1) switch (_context39.prev = _context39.next) {
                 case 0:
@@ -3820,19 +3818,19 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                   console.log(this.loginForm);
                   _context39.next = 5;
                   return this.api.postItem('login', this.loginForm).then(function (res) {
-                    _this45.status = res;
-                    if (_this45.status.errors != undefined) {
-                      _this45.errors = _this45.status.errors;
-                      _this45.inValidUsername();
-                    } else if (_this45.status.data) {
-                      _this45.settings.customer.id = _this45.status.ID;
-                      if (_this45.status.allcaps.dc_vendor || _this45.status.allcaps.seller || _this45.status.allcaps.wcfm_vendor) {
-                        _this45.settings.vendor = true;
+                    _this43.status = res;
+                    if (_this43.status.errors != undefined) {
+                      _this43.errors = _this43.status.errors;
+                      _this43.inValidUsername();
+                    } else if (_this43.status.data) {
+                      _this43.settings.customer.id = _this43.status.ID;
+                      if (_this43.status.allcaps.dc_vendor || _this43.status.allcaps.seller || _this43.status.allcaps.wcfm_vendor) {
+                        _this43.settings.vendor = true;
                       }
-                      if (_this45.status.allcaps.administrator) {
-                        _this45.settings.administrator = true;
+                      if (_this43.status.allcaps.administrator) {
+                        _this43.settings.administrator = true;
                       }
-                      _this45.navCtrl.navigateForward('/tabs/cart/address');
+                      _this43.navCtrl.navigateForward('/tabs/cart/address');
                     }
                   }, function (err) {
                     console.log(err);
@@ -4008,11 +4006,11 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "showSubCategory",
         value: function showSubCategory(i) {
-          var _this46 = this;
+          var _this44 = this;
           var intial = this.data.mainCategories[i].show;
           this.data.mainCategories[i].show = !intial;
           if (this.data.categories.filter(function (item) {
-            return item.parent == _this46.data.mainCategories[i].id;
+            return item.parent == _this44.data.mainCategories[i].id;
           }).length == 0) {
             this.data.mainCategories.forEach(function (item) {
               console.log('categories data:', item);
@@ -4135,29 +4133,29 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "getCheckoutForm",
         value: function getCheckoutForm() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee42() {
-            var _this47 = this;
+            var _this45 = this;
             return _regeneratorRuntime().wrap(function _callee42$(_context42) {
               while (1) switch (_context42.prev = _context42.next) {
                 case 0:
                   this.loader = true;
                   _context42.next = 3;
                   return this.api.postItem('get_checkout_form').then(function (res) {
-                    _this47.checkoutData.form = res;
-                    _this47.checkoutData.form.sameForShipping = true;
-                    if (_this47.checkoutData.form.countries.length == 1) {
-                      _this47.checkoutData.form.billing_country = _this47.checkoutData.form.countries[0].value;
-                      _this47.checkoutData.form.shipping_country = _this47.checkoutData.form.countries[0].value;
+                    _this45.checkoutData.form = res;
+                    _this45.checkoutData.form.sameForShipping = true;
+                    if (_this45.checkoutData.form.countries.length == 1) {
+                      _this45.checkoutData.form.billing_country = _this45.checkoutData.form.countries[0].value;
+                      _this45.checkoutData.form.shipping_country = _this45.checkoutData.form.countries[0].value;
                     }
-                    _this47.checkoutData.billingStates = _this47.checkoutData.form.countries.find(function (item) {
-                      return item.value == _this47.checkoutData.form.billing_country;
+                    _this45.checkoutData.billingStates = _this45.checkoutData.form.countries.find(function (item) {
+                      return item.value == _this45.checkoutData.form.billing_country;
                     });
-                    _this47.checkoutData.shippingStates = _this47.checkoutData.form.countries.find(function (item) {
-                      return item.value == _this47.checkoutData.form.shipping_country;
+                    _this45.checkoutData.shippingStates = _this45.checkoutData.form.countries.find(function (item) {
+                      return item.value == _this45.checkoutData.form.shipping_country;
                     });
-                    _this47.loader = false;
+                    _this45.loader = false;
                   }, function (err) {
                     console.log(err);
-                    _this47.loader = false;
+                    _this45.loader = false;
                   });
                 case 3:
                 case "end":
@@ -4169,9 +4167,9 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "getCountries",
         value: function getCountries() {
-          var _this48 = this;
+          var _this46 = this;
           this.api.getItem('settings/general/woocommerce_specific_allowed_countries').then(function (res) {
-            _this48.countries = res;
+            _this46.countries = res;
           }, function (err) {
             console.log(err);
           });
@@ -4179,18 +4177,18 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "getBillingRegion",
         value: function getBillingRegion() {
-          var _this49 = this;
+          var _this47 = this;
           this.checkoutData.billingStates = this.checkoutData.form.countries.find(function (item) {
-            return item.value == _this49.checkoutData.form.billing_country;
+            return item.value == _this47.checkoutData.form.billing_country;
           });
           this.checkoutData.form.billing_state = '';
         }
       }, {
         key: "getShippingRegion",
         value: function getShippingRegion() {
-          var _this50 = this;
+          var _this48 = this;
           this.checkoutData.shippingStates = this.checkoutData.form.countries.find(function (item) {
-            return item.value == _this50.checkoutData.form.shipping_country;
+            return item.value == _this48.checkoutData.form.shipping_country;
           });
           this.checkoutData.form.shipping_state = '';
         }
@@ -4198,13 +4196,13 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "updateOrderReview",
         value: function updateOrderReview() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee43() {
-            var _this51 = this;
+            var _this49 = this;
             return _regeneratorRuntime().wrap(function _callee43$(_context43) {
               while (1) switch (_context43.prev = _context43.next) {
                 case 0:
                   _context43.next = 2;
                   return this.api.postItem('update_order_review').then(function (res) {
-                    _this51.checkoutData.orderReview = res;
+                    _this49.checkoutData.orderReview = res;
                   }, function (err) {
                     console.log(err);
                   });
@@ -4414,7 +4412,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "updateOrder",
         value: function updateOrder() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee44() {
-            var _this52 = this;
+            var _this50 = this;
             return _regeneratorRuntime().wrap(function _callee44$(_context44) {
               while (1) switch (_context44.prev = _context44.next) {
                 case 0:
@@ -4424,9 +4422,9 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                   this.setOldWooCommerceVersionData();
                   _context44.next = 6;
                   return this.api.updateOrderReview('update_order_review', this.checkoutData.form).then(function (res) {
-                    _this52.orderReview = res;
-                    if (_this52.orderReview.payment && _this52.orderReview.payment.stripe) {
-                      _this52.stripe = Stripe(_this52.orderReview.payment.stripe.publishable_key);
+                    _this50.orderReview = res;
+                    if (_this50.orderReview.payment && _this50.orderReview.payment.stripe) {
+                      _this50.stripe = Stripe(_this50.orderReview.payment.stripe.publishable_key);
                     }
                   }, function (err) {
                     console.log(err);
@@ -4442,13 +4440,13 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "updateOrderReview",
         value: function updateOrderReview() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee45() {
-            var _this53 = this;
+            var _this51 = this;
             return _regeneratorRuntime().wrap(function _callee45$(_context45) {
               while (1) switch (_context45.prev = _context45.next) {
                 case 0:
                   this.checkoutData.form.shipping_method = [];
                   this.orderReview.shipping.forEach(function (item, index) {
-                    _this53.checkoutData.form['shipping_method[' + index + ']'] = item.chosen_method;
+                    _this51.checkoutData.form['shipping_method[' + index + ']'] = item.chosen_method;
                   });
                   this.checkoutData.form.security = this.checkoutData.form.nonce.update_order_review_nonce;
                   this.checkoutData.form['woocommerce-process-checkout-nonce'] = this.checkoutData.form._wpnonce;
@@ -4456,7 +4454,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                   this.setOldWooCommerceVersionData();
                   _context45.next = 8;
                   return this.api.updateOrderReview('update_order_review', this.checkoutData.form).then(function (res) {
-                    _this53.handleData(res);
+                    _this51.handleData(res);
                   }, function (err) {
                     console.log(err);
                   });
@@ -4492,7 +4490,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "placeOrder",
         value: function placeOrder() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee46() {
-            var _this54 = this;
+            var _this52 = this;
             return _regeneratorRuntime().wrap(function _callee46$(_context46) {
               while (1) switch (_context46.prev = _context46.next) {
                 case 0:
@@ -4505,7 +4503,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                   }
                   _context46.next = 5;
                   return this.oneSignal.getIds().then(function (data) {
-                    _this54.checkoutData.form.onesignal_user_id = data.userId;
+                    _this52.checkoutData.form.onesignal_user_id = data.userId;
                   });
                 case 5:
                   if (this.checkoutData.form.payment_method == 'authnet') {
@@ -4518,10 +4516,10 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                   this.setStripeForm();
                   _context46.next = 10;
                   return this.api.getExternalData('https://api.stripe.com/v1/tokens', this.stripeForm).then(function (res) {
-                    _this54.handleStipeToken(res);
+                    _this52.handleStipeToken(res);
                   }, function (err) {
-                    if (err.error.error.message) _this54.errorMessage = err.error.error.message;
-                    _this54.disableButton = false;
+                    if (err.error.error.message) _this52.errorMessage = err.error.error.message;
+                    _this52.disableButton = false;
                   });
                 case 10:
                   _context46.next = 14;
@@ -4529,10 +4527,10 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                 case 12:
                   _context46.next = 14;
                   return this.api.ajaxCall('/checkout?wc-ajax=checkout', this.checkoutData.form).then(function (res) {
-                    _this54.results = res;
-                    _this54.handleOrder();
+                    _this52.results = res;
+                    _this52.handleOrder();
                   }, function (err) {
-                    _this54.disableButton = false;
+                    _this52.disableButton = false;
                     console.log(err);
                   });
                 case 14:
@@ -4569,27 +4567,27 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "handleEFTSECURE",
         value: function handleEFTSECURE() {
-          var _this55 = this;
+          var _this53 = this;
           var options = "location=no,hidden=yes,toolbar=no,hidespinner=yes";
           var browser = this.iab.create(this.results.redirect, '_blank', options);
           browser.show();
           browser.on('loadstart').subscribe(function (data) {
             if (data.url.indexOf('/order-received/') != -1 && data.url.indexOf('key=wc_order_') != -1) {
-              _this55.orderSummary(data.url);
+              _this53.orderSummary(data.url);
               browser.hide();
             } else if (data.url.indexOf('cancel_order=true') != -1 || data.url.indexOf('cancelled=1') != -1 || data.url.indexOf('cancelled') != -1) {
               browser.close();
-              _this55.disableButton = false;
+              _this53.disableButton = false;
             }
           });
           browser.on('exit').subscribe(function (data) {
-            _this55.disableButton = false;
+            _this53.disableButton = false;
           });
         }
       }, {
         key: "handlepumcp",
         value: function handlepumcp() {
-          var _this56 = this;
+          var _this54 = this;
           var options = "location=no,hidden=yes,toolbar=no,hidespinner=yes";
           var browser = this.iab.create(this.results.redirect, '_blank', options);
           var str = this.results.redirect;
@@ -4603,15 +4601,15 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
               browserActive = true;
               browser.show();
             } else if (data.url.indexOf('payment/postBackParam') != -1) {
-              if (_this56.orderId) _this56.navCtrl.navigateRoot('/order-summary/' + _this56.orderId);
+              if (_this54.orderId) _this54.navCtrl.navigateRoot('/order-summary/' + _this54.orderId);
               browser.hide();
             } else if (data.url.indexOf('cancel_order=true') != -1 || data.url.indexOf('cancelled=1') != -1 || data.url.indexOf('cancelled') != -1) {
               browser.close();
-              _this56.disableButton = false;
+              _this54.disableButton = false;
             }
           });
           browser.on('exit').subscribe(function (data) {
-            _this56.disableButton = false;
+            _this54.disableButton = false;
           });
         }
       }, {
@@ -4635,27 +4633,27 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "handlePayment",
         value: function handlePayment() {
-          var _this57 = this;
+          var _this55 = this;
           var options = "location=no,hidden=yes,toolbar=no,hidespinner=yes";
           var browser = this.iab.create(this.results.redirect, '_blank', options);
           browser.show();
           browser.on('loadstart').subscribe(function (data) {
             if (data.url.indexOf('/order-received/') != -1 && data.url.indexOf('key=wc_order_') != -1) {
-              _this57.orderSummary(data.url);
+              _this55.orderSummary(data.url);
               browser.hide();
             } else if (data.url.indexOf('cancel_order=true') != -1 || data.url.indexOf('cancelled=1') != -1 || data.url.indexOf('cancelled') != -1) {
               browser.close();
-              _this57.disableButton = false;
+              _this55.disableButton = false;
             }
           });
           browser.on('exit').subscribe(function (data) {
-            _this57.disableButton = false;
+            _this55.disableButton = false;
           });
         }
       }, {
         key: "handleRazorPayment",
         value: function handleRazorPayment() {
-          var _this58 = this;
+          var _this56 = this;
           var options = "location=no,hidden=yes,toolbar=no,hidespinner=yes";
           var browser = this.iab.create(this.results.redirect, '_blank', options);
           browser.show();
@@ -4667,24 +4665,24 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
               code: ".page{visibility: initial;}"
             });
             if (data.url.indexOf('/order-received/') != -1 && data.url.indexOf('key=wc_order_') != -1) {
-              _this58.orderSummary(data.url);
+              _this56.orderSummary(data.url);
               browser.hide();
             } else if (data.url.indexOf('cancel_order=true') != -1 || data.url.indexOf('cancelled=1') != -1 || data.url.indexOf('cancelled') != -1) {
               browser.close();
-              _this58.disableButton = false;
+              _this56.disableButton = false;
             } else if (data.url.substr(data.url.length - 10) == '/checkout/') {
-              _this58.disableButton = false;
+              _this56.disableButton = false;
               browser.close();
             }
           });
           browser.on('exit').subscribe(function (data) {
-            _this58.disableButton = false;
+            _this56.disableButton = false;
           });
         }
       }, {
         key: "handlePayUPayment",
         value: function handlePayUPayment() {
-          var _this59 = this;
+          var _this57 = this;
           var options = "location=no,hidden=yes,toolbar=no,hidespinner=yes";
           var browser = this.iab.create(this.results.redirect, '_blank', options);
           var str = this.results.redirect;
@@ -4698,21 +4696,21 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
               browserActive = true;
               browser.show();
             } else if (data.url.indexOf('/order-received/') != -1 && data.url.indexOf('key=wc_order_') != -1) {
-              if (_this59.orderId) _this59.navCtrl.navigateRoot('/order-summary/' + _this59.orderId);
+              if (_this57.orderId) _this57.navCtrl.navigateRoot('/order-summary/' + _this57.orderId);
               browser.hide();
             } else if (data.url.indexOf('cancel_order=true') != -1 || data.url.indexOf('cancelled=1') != -1 || data.url.indexOf('cancelled') != -1) {
               browser.close();
-              _this59.disableButton = false;
+              _this57.disableButton = false;
             }
           });
           browser.on('exit').subscribe(function (data) {
-            _this59.disableButton = false;
+            _this57.disableButton = false;
           });
         }
       }, {
         key: "handlePaytmPayment",
         value: function handlePaytmPayment() {
-          var _this60 = this;
+          var _this58 = this;
           var str = this.results.redirect;
           var pos1 = str.lastIndexOf("/order-pay/");
           var pos2 = str.lastIndexOf("/?key=wc_order");
@@ -4727,18 +4725,18 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                 browserActive = true;
                 browser.show();
               } else if (data.url.indexOf('type=success') != -1) {
-                if (_this60.orderId) _this60.navCtrl.navigateRoot('/order-summary/' + _this60.orderId);
+                if (_this58.orderId) _this58.navCtrl.navigateRoot('/order-summary/' + _this58.orderId);
                 browser.hide();
               } else if (data.url.indexOf('type=error') != -1 || data.url.indexOf('Failed') != -1 || data.url.indexOf('cancel_order=true') != -1 || data.url.indexOf('cancelled') != -1) {
                 browser.close();
-                _this60.disableButton = false;
+                _this58.disableButton = false;
               } else if (data.url.indexOf('Thank+you+for+your+order') != -1) {
                 browser.close();
-                _this60.disableButton = false;
+                _this58.disableButton = false;
               }
             });
             browser.on('exit').subscribe(function (data) {
-              _this60.disableButton = false;
+              _this58.disableButton = false;
             });
           } else if (this.results.result == 'failure') {
             this.errorMessage = this.results.messages;
@@ -4748,7 +4746,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "handlePaytmQRPayment",
         value: function handlePaytmQRPayment() {
-          var _this61 = this;
+          var _this59 = this;
           var str = this.results.redirect;
           var pos1 = str.lastIndexOf("/order-received/");
           var pos2 = str.lastIndexOf("/?key=wc_order");
@@ -4761,12 +4759,12 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
               browser.show();
               if (data.url.indexOf('/order-received/') == -1) {
                 browser.close();
-                _this61.disableButton = false;
-                _this61.navCtrl.navigateRoot('/order-summary/' + _this61.orderId);
+                _this59.disableButton = false;
+                _this59.navCtrl.navigateRoot('/order-summary/' + _this59.orderId);
               }
             });
             browser.on('exit').subscribe(function (data) {
-              _this61.disableButton = false;
+              _this59.disableButton = false;
             });
           } else if (this.results.result == 'failure') {
             this.errorMessage = this.results.messages;
@@ -4802,7 +4800,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "handleStipeToken",
         value: function handleStipeToken(token) {
-          var _this62 = this;
+          var _this60 = this;
           if (token && token.id) {
             var form = {
               type: 'card',
@@ -4814,10 +4812,10 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
             form.key = this.orderReview.payment.stripe.publishable_key;
             this.checkoutData.form['wc-stripe-payment-token'] = token.id; //For Existing Cards add api
             this.api.getExternalData('https://api.stripe.com/v1/sources', form).then(function (res) {
-              _this62.stripePlaceOrder(res);
+              _this60.stripePlaceOrder(res);
             }, function (err) {
-              if (err.error.error.message) _this62.errorMessage = err.error.error.message;
-              _this62.disableButton = false;
+              if (err.error.error.message) _this60.errorMessage = err.error.error.message;
+              _this60.disableButton = false;
             });
           } else {
             this.disableButton = false;
@@ -4827,14 +4825,14 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "stripePlaceOrder",
         value: function stripePlaceOrder(src) {
-          var _this63 = this;
+          var _this61 = this;
           if (src && src.id) {
             this.checkoutData.form['stripe_source'] = src.id;
             this.api.ajaxCall('/checkout?wc-ajax=checkout', this.checkoutData.form).then(function (res) {
-              _this63.results = res;
-              _this63.handleOrder();
+              _this61.results = res;
+              _this61.handleOrder();
             }, function (err) {
-              _this63.disableButton = false;
+              _this61.disableButton = false;
               console.log(err);
             });
           } else {
@@ -4855,7 +4853,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "setupStripe",
         value: function setupStripe() {
-          var _this64 = this;
+          var _this62 = this;
           var style = {
             base: {
               color: '#32325d',
@@ -4892,40 +4890,40 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
              });*/
             var ownerInfo = {
               owner: {
-                name: _this64.checkoutData.form.billing_first_name + ' ' + _this64.checkoutData.form.billing_last_name,
+                name: _this62.checkoutData.form.billing_first_name + ' ' + _this62.checkoutData.form.billing_last_name,
                 address: {
-                  line1: _this64.checkoutData.form.billing_address_1,
-                  city: _this64.checkoutData.form.billing_city,
-                  postal_code: _this64.checkoutData.form.billing_postcode,
+                  line1: _this62.checkoutData.form.billing_address_1,
+                  city: _this62.checkoutData.form.billing_city,
+                  postal_code: _this62.checkoutData.form.billing_postcode,
                   country: 'US'
                 },
-                email: _this64.checkoutData.form.billing_email
+                email: _this62.checkoutData.form.billing_email
               }
             };
-            if (!_this64.checkoutData.form.shipping) {
-              _this64.checkoutData.form.shipping_first_name = _this64.checkoutData.form.billing_first_name;
-              _this64.checkoutData.form.shipping_last_name = _this64.checkoutData.form.billing_last_name;
-              _this64.checkoutData.form.shipping_company = _this64.checkoutData.form.billing_company;
-              _this64.checkoutData.form.shipping_address_1 = _this64.checkoutData.form.billing_address_1;
-              _this64.checkoutData.form.shipping_address_2 = _this64.checkoutData.form.billing_address_2;
-              _this64.checkoutData.form.shipping_city = _this64.checkoutData.form.billing_city;
-              _this64.checkoutData.form.shipping_country = _this64.checkoutData.form.billing_country;
-              _this64.checkoutData.form.shipping_state = _this64.checkoutData.form.billing_state;
-              _this64.checkoutData.form.shipping_postcode = _this64.checkoutData.form.billing_postcode;
+            if (!_this62.checkoutData.form.shipping) {
+              _this62.checkoutData.form.shipping_first_name = _this62.checkoutData.form.billing_first_name;
+              _this62.checkoutData.form.shipping_last_name = _this62.checkoutData.form.billing_last_name;
+              _this62.checkoutData.form.shipping_company = _this62.checkoutData.form.billing_company;
+              _this62.checkoutData.form.shipping_address_1 = _this62.checkoutData.form.billing_address_1;
+              _this62.checkoutData.form.shipping_address_2 = _this62.checkoutData.form.billing_address_2;
+              _this62.checkoutData.form.shipping_city = _this62.checkoutData.form.billing_city;
+              _this62.checkoutData.form.shipping_country = _this62.checkoutData.form.billing_country;
+              _this62.checkoutData.form.shipping_state = _this62.checkoutData.form.billing_state;
+              _this62.checkoutData.form.shipping_postcode = _this62.checkoutData.form.billing_postcode;
             }
-            _this64.loading = _this64.loadingController.create({});
-            _this64.loading.present();
-            _this64.buttonSubmit = true;
-            _this64.PlaceOrder = "Placing Order";
-            _this64.stripe.createSource(_this64.cardElement, ownerInfo).then(function (result) {
+            _this62.loading = _this62.loadingController.create({});
+            _this62.loading.present();
+            _this62.buttonSubmit = true;
+            _this62.PlaceOrder = "Placing Order";
+            _this62.stripe.createSource(_this62.cardElement, ownerInfo).then(function (result) {
               if (result.error) {
-                _this64.loading.dismiss();
+                _this62.loading.dismiss();
                 // Inform the user if there was an error
                 var errorElement = document.getElementById('card-errors');
                 errorElement.textContent = result.error.message;
               } else {
-                _this64.checkoutData.form.stripe_source = result.source.id;
-                _this64.stripNewPayment();
+                _this62.checkoutData.form.stripe_source = result.source.id;
+                _this62.stripNewPayment();
               }
             });
             /*    */
@@ -4935,7 +4933,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "onClickStripeSubmit",
         value: function onClickStripeSubmit() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee47() {
-            var _this65 = this;
+            var _this63 = this;
             var ownerInfo;
             return _regeneratorRuntime().wrap(function _callee47$(_context47) {
               while (1) switch (_context47.prev = _context47.next) {
@@ -4979,13 +4977,13 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                 case 9:
                   this.stripe.createSource(this.cardElement, ownerInfo).then(function (result) {
                     if (result.error) {
-                      _this65.loading.dismiss();
+                      _this63.loading.dismiss();
                       // Inform the user if there was an error
                       var errorElement = document.getElementById('card-errors');
                       errorElement.textContent = result.error.message;
                     } else {
-                      _this65.checkoutData.form.stripe_source = result.source.id;
-                      _this65.stripNewPayment();
+                      _this63.checkoutData.form.stripe_source = result.source.id;
+                      _this63.stripNewPayment();
                     }
                   });
                 case 10:
@@ -4999,7 +4997,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "stripNewPayment",
         value: function stripNewPayment() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee48() {
-            var _this66 = this;
+            var _this64 = this;
             return _regeneratorRuntime().wrap(function _callee48$(_context48) {
               while (1) switch (_context48.prev = _context48.next) {
                 case 0:
@@ -5011,59 +5009,59 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                   //if(!form.card)
                   //this.checkoutData.form['wc-stripe-payment-token'] = form.payment_token);
                   this.api.ajaxCall('/checkout?wc-ajax=checkout', this.checkoutData.form).then(function (res) {
-                    _this66.stripeStatus = res;
-                    if (_this66.stripeStatus.result == 'success') {
-                      if (_this66.stripeStatus.redirect.indexOf('confirm-pi-') != -1) {
+                    _this64.stripeStatus = res;
+                    if (_this64.stripeStatus.result == 'success') {
+                      if (_this64.stripeStatus.redirect.indexOf('confirm-pi-') != -1) {
                         // PI from resuct redirect text
-                        var clientSecret = _this66.stripeStatus.redirect.substring(_this66.stripeStatus.redirect.lastIndexOf("confirm-pi-") + 11, _this66.stripeStatus.redirect.lastIndexOf(":%2F"));
+                        var clientSecret = _this64.stripeStatus.redirect.substring(_this64.stripeStatus.redirect.lastIndexOf("confirm-pi-") + 11, _this64.stripeStatus.redirect.lastIndexOf(":%2F"));
                         //var clientSecret = 'pi_1EqKUlAMZtK61uwq79jdiVMt_secret_DitxeVf8vWt05K6kUS71alvrS';
-                        _this66.stripe.handleCardPayment(clientSecret, _this66.cardElement, {
+                        _this64.stripe.handleCardPayment(clientSecret, _this64.cardElement, {
                           payment_method_data: {
                             billing_details: {
-                              name: _this66.checkoutData.form.billing_first_name + ' ' + _this66.checkoutData.form.billing_last_name,
+                              name: _this64.checkoutData.form.billing_first_name + ' ' + _this64.checkoutData.form.billing_last_name,
                               address: {
-                                line1: _this66.checkoutData.form.billing_address_1,
-                                city: _this66.checkoutData.form.billing_city,
-                                postal_code: _this66.checkoutData.form.billing_postcode,
+                                line1: _this64.checkoutData.form.billing_address_1,
+                                city: _this64.checkoutData.form.billing_city,
+                                postal_code: _this64.checkoutData.form.billing_postcode,
                                 country: 'GB'
                               },
-                              email: _this66.checkoutData.form.billing_email
+                              email: _this64.checkoutData.form.billing_email
                             }
                           }
                         }).then(function (result) {
-                          _this66.loading.dismiss();
+                          _this64.loading.dismiss();
                           if (result.error) {
-                            _this66.buttonSubmit = false;
+                            _this64.buttonSubmit = false;
                             // Display error.message in your UI.
                           } else {
-                            _this66.buttonSubmit = false;
-                            var str = _this66.stripeStatus.redirect;
+                            _this64.buttonSubmit = false;
+                            var str = _this64.stripeStatus.redirect;
                             var pos1 = str.lastIndexOf("received%252F");
                             var pos2 = str.lastIndexOf("%252F%253Fkey");
                             var pos3 = pos2 - (pos1 + 13);
                             var order_id = str.substr(pos1 + 13, pos3);
-                            _this66.api.ajaxCall('/?wc-ajax=wc_stripe_verify_intent&order=' + order_id + '&nonce=' + _this66.checkoutData.form.stripe_confirm_pi + '&redirect_to=').then(function (res) {
-                              _this66.navCtrl.navigateRoot('/order-summary/' + order_id);
+                            _this64.api.ajaxCall('/?wc-ajax=wc_stripe_verify_intent&order=' + order_id + '&nonce=' + _this64.checkoutData.form.stripe_confirm_pi + '&redirect_to=').then(function (res) {
+                              _this64.navCtrl.navigateRoot('/order-summary/' + order_id);
                             }, function (err) {});
                           }
                         });
-                      } else if (_this66.stripeStatus.redirect.indexOf('order-received') != -1 && _this66.stripeStatus.redirect.indexOf('key=wc_order') != -1) {
-                        var str = _this66.stripeStatus.redirect;
+                      } else if (_this64.stripeStatus.redirect.indexOf('order-received') != -1 && _this64.stripeStatus.redirect.indexOf('key=wc_order') != -1) {
+                        var str = _this64.stripeStatus.redirect;
                         var pos1 = str.lastIndexOf("/order-received/");
                         var pos2 = str.lastIndexOf("/?key=wc_order");
                         var pos3 = pos2 - (pos1 + 16);
                         var order_id = str.substr(pos1 + 16, pos3);
-                        _this66.buttonSubmit = false;
-                        _this66.loading.dismiss();
-                        _this66.navCtrl.navigateRoot('/order-summary/' + order_id);
+                        _this64.buttonSubmit = false;
+                        _this64.loading.dismiss();
+                        _this64.navCtrl.navigateRoot('/order-summary/' + order_id);
                       }
-                    } else if (_this66.stripeStatus.result == 'failure') {
-                      _this66.presentToast(_this66.stripeStatus.messages);
-                      _this66.buttonSubmit = false;
-                      _this66.loading.dismiss();
+                    } else if (_this64.stripeStatus.result == 'failure') {
+                      _this64.presentToast(_this64.stripeStatus.messages);
+                      _this64.buttonSubmit = false;
+                      _this64.loading.dismiss();
                     }
                   }, function (err) {
-                    _this66.disableButton = false;
+                    _this64.disableButton = false;
                     console.log(err);
                   });
                 case 2:
@@ -5222,11 +5220,11 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "submit",
         value: function submit() {
-          var _this67 = this;
+          var _this65 = this;
           this.disableButton = true;
           this.api.ajaxCall(this.contactUsLink, this.form).then(function (res) {
-            _this67.disableButton = false;
-            _this67.status = res;
+            _this65.disableButton = false;
+            _this65.status = res;
           }, function (err) {
             console.log(err);
           });
@@ -5403,7 +5401,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "getPost",
         value: function getPost() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee50() {
-            var _this68 = this;
+            var _this66 = this;
             return _regeneratorRuntime().wrap(function _callee50$(_context50) {
               while (1) switch (_context50.prev = _context50.next) {
                 case 0:
@@ -5411,7 +5409,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                   return this.api.postItem('page_content', {
                     page_id: this.id
                   }).then(function (res) {
-                    _this68.post = res;
+                    _this66.post = res;
                   }, function (err) {
                     console.log(err);
                   });
@@ -5788,12 +5786,12 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "getProduct",
         value: function getProduct() {
-          var _this69 = this;
+          var _this67 = this;
           this.api.postItem('product', {
             'product_id': this.id
           }).then(function (res) {
-            _this69.product = res;
-            _this69.handleProduct();
+            _this67.product = res;
+            _this67.handleProduct();
           }, function (err) {
             console.log(err);
           });
@@ -5801,17 +5799,17 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this70 = this;
+          var _this68 = this;
           this.translate.get(['Oops!', 'Please Select', 'Please wait', 'Options', 'Option', 'Select', 'Item added to cart', 'Message', 'Requested quantity not available']).subscribe(function (translations) {
-            _this70.lan.oops = translations['Oops!'];
-            _this70.lan.PleaseSelect = translations['Please Select'];
-            _this70.lan.Pleasewait = translations['Please wait'];
-            _this70.lan.options = translations['Options'];
-            _this70.lan.option = translations['Option'];
-            _this70.lan.select = translations['Select'];
-            _this70.lan.addToCart = translations['Item added to cart'];
-            _this70.lan.message = translations['Message'];
-            _this70.lan.lowQuantity = translations['Requested quantity not available'];
+            _this68.lan.oops = translations['Oops!'];
+            _this68.lan.PleaseSelect = translations['Please Select'];
+            _this68.lan.Pleasewait = translations['Please wait'];
+            _this68.lan.options = translations['Options'];
+            _this68.lan.option = translations['Option'];
+            _this68.lan.select = translations['Select'];
+            _this68.lan.addToCart = translations['Item added to cart'];
+            _this68.lan.message = translations['Message'];
+            _this68.lan.lowQuantity = translations['Requested quantity not available'];
           });
           this.product = this.productData.product;
           this.id = this.route.snapshot.paramMap.get('id');
@@ -5820,11 +5818,11 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "handleProduct",
         value: function handleProduct() {
-          var _this71 = this;
+          var _this69 = this;
           /* Reward Points */
           if (this.settings.settings.switchRewardPoints && this.product.meta_data) this.product.meta_data.forEach(function (item) {
             if (item.key == '_wc_points_earned') {
-              _this71.product.showPoints = item.value;
+              _this69.product.showPoints = item.value;
             }
           });
           /* Product Addons */
@@ -5840,45 +5838,45 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "getVariationProducts",
         value: function getVariationProducts() {
-          var _this72 = this;
+          var _this70 = this;
           this.api.getItem('products/' + this.product.id + '/variations', {
             per_page: 100
           }).then(function (res) {
-            _this72.variations = res;
+            _this70.variations = res;
           }, function (err) {});
         }
       }, {
         key: "getGroupedProducts",
         value: function getGroupedProducts() {
-          var _this73 = this;
+          var _this71 = this;
           if (this.product.grouped_products.length) {
             var filter = [];
             for (var item in this.product.grouped_products) filter['include[' + item + ']'] = this.product.grouped_products[item];
             this.api.getItem('products', filter).then(function (res) {
-              _this73.groupedProducts = res;
+              _this71.groupedProducts = res;
             }, function (err) {});
           }
         }
       }, {
         key: "getRelatedProducts",
         value: function getRelatedProducts() {
-          var _this74 = this;
+          var _this72 = this;
           var filter = [];
           filter['product_id'] = this.product.id;
           this.api.postItem('product_details', filter).then(function (res) {
-            _this74.productDetails = res;
+            _this72.productDetails = res;
           }, function (err) {});
         }
       }, {
         key: "getReviews",
         value: function getReviews() {
-          var _this75 = this;
+          var _this73 = this;
           this.api.postItem('product_reviews', {
             'product_id': this.product.id
           }).then(function (res) {
-            _this75.reviews = res;
-            for (var item in _this75.reviews) {
-              _this75.reviews[item].avatar = Object(_md5__WEBPACK_IMPORTED_MODULE_8__["md5"])(_this75.reviews[item].email);
+            _this73.reviews = res;
+            for (var item in _this73.reviews) {
+              _this73.reviews[item].avatar = Object(_md5__WEBPACK_IMPORTED_MODULE_8__["md5"])(_this73.reviews[item].email);
             }
           }, function (err) {});
         }
@@ -5894,7 +5892,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "addToCart",
         value: function addToCart() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee51() {
-            var _this76 = this;
+            var _this74 = this;
             return _regeneratorRuntime().wrap(function _callee51$(_context51) {
               while (1) switch (_context51.prev = _context51.next) {
                 case 0:
@@ -5917,18 +5915,18 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                   this.disableButton = true;
                   _context51.next = 10;
                   return this.api.addcart('add_to_cart', this.options).then(function (res) {
-                    _this76.results = res;
-                    if (_this76.results.error) {
-                      _this76.presentToast(_this76.results.notice);
+                    _this74.results = res;
+                    if (_this74.results.error) {
+                      _this74.presentToast(_this74.results.notice);
                     } else {
-                      _this76.cart = res;
-                      _this76.presentToast(_this76.lan.addToCart);
-                      _this76.data.updateCart(_this76.cart.cart);
+                      _this74.cart = res;
+                      _this74.presentToast(_this74.lan.addToCart);
+                      _this74.data.updateCart(_this74.cart.cart);
                     }
-                    _this76.disableButton = false;
+                    _this74.disableButton = false;
                   }, function (err) {
                     console.log(err);
-                    _this76.disableButton = false;
+                    _this74.disableButton = false;
                   });
                 case 10:
                 case "end":
@@ -5964,13 +5962,13 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "setVariations",
         value: function setVariations() {
-          var _this77 = this;
+          var _this75 = this;
           if (this.variationId) {
             this.options.variation_id = this.variationId;
           }
           this.product.attributes.forEach(function (item) {
             if (item.selected) {
-              _this77.options['variation[attribute_pa_' + item.name + ']'] = item.selected;
+              _this75.options['variation[attribute_pa_' + item.name + ']'] = item.selected;
             }
           });
           for (var i = 0; i < this.product.attributes.length; i++) {
@@ -6046,7 +6044,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "chooseVariation",
         value: function chooseVariation(att, value) {
-          var _this78 = this;
+          var _this76 = this;
           this.product.attributes.forEach(function (item) {
             item.selected = undefined;
           });
@@ -6058,17 +6056,17 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
           if (this.usedVariationAttributes.every(function (a) {
             return a.selected !== undefined;
           })) this.variations.forEach(function (variation) {
-            var test = new Array(_this78.usedVariationAttributes.length);
+            var test = new Array(_this76.usedVariationAttributes.length);
             test.fill(false);
-            _this78.usedVariationAttributes.forEach(function (attribute) {
+            _this76.usedVariationAttributes.forEach(function (attribute) {
               if (variation.attributes.length == 0) {
-                _this78.variationId = variation.id;
-                _this78.product.stock_status = variation.stock_status;
-                _this78.product.price = variation.price;
-                _this78.product.sale_price = variation.sale_price;
-                _this78.product.regular_price = variation.regular_price;
-                _this78.product.manage_stock = variation.manage_stock;
-                _this78.product.stock_quantity = variation.stock_quantity;
+                _this76.variationId = variation.id;
+                _this76.product.stock_status = variation.stock_status;
+                _this76.product.price = variation.price;
+                _this76.product.sale_price = variation.sale_price;
+                _this76.product.regular_price = variation.regular_price;
+                _this76.product.manage_stock = variation.manage_stock;
+                _this76.product.stock_quantity = variation.stock_quantity;
                 //this.product.images[0] = variation.image; /* Uncomment this if you want to use variation images */
               } else {
                 variation.attributes.forEach(function (item, index) {
@@ -6079,16 +6077,16 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                 if (test.every(function (v) {
                   return v == true;
                 })) {
-                  _this78.variationId = variation.id;
-                  _this78.product.stock_status = variation.stock_status;
-                  _this78.product.price = variation.price;
-                  _this78.product.sale_price = variation.sale_price;
-                  _this78.product.regular_price = variation.regular_price;
-                  _this78.product.manage_stock = variation.manage_stock;
-                  _this78.product.stock_quantity = variation.stock_quantity;
+                  _this76.variationId = variation.id;
+                  _this76.product.stock_status = variation.stock_status;
+                  _this76.product.price = variation.price;
+                  _this76.product.sale_price = variation.sale_price;
+                  _this76.product.regular_price = variation.regular_price;
+                  _this76.product.manage_stock = variation.manage_stock;
+                  _this76.product.stock_quantity = variation.stock_quantity;
                   //this.product.images[0] = variation.image;  /* Uncomment this if you want to use variation images */
                   test.fill(false);
-                } else if (variation.attributes.length != 1 && variation.attributes.length == _this78.usedVariationAttributes.length && test.some(function (v) {
+                } else if (variation.attributes.length != 1 && variation.attributes.length == _this76.usedVariationAttributes.length && test.some(function (v) {
                   return v == false;
                 })) {
                   //this.product.stock_status = 'outofstock';
@@ -6158,12 +6156,12 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "setGroupedProducts",
         value: function setGroupedProducts() {
-          var _this79 = this;
+          var _this77 = this;
           if (this.product.type == 'grouped') {
             this.options['add-to-cart'] = this.product.id;
             this.groupedProducts.forEach(function (item) {
               if (item.selected) {
-                _this79.options['quantity[' + item.id + ']'] = item.selected;
+                _this77.options['quantity[' + item.id + ']'] = item.selected;
               }
             });
             return true;
@@ -6186,24 +6184,24 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "getGlobalAddons",
         value: function getGlobalAddons() {
-          var _this80 = this;
+          var _this78 = this;
           this.api.getAddonsList('product-add-ons').then(function (res) {
-            _this80.handleAddonResults(res);
+            _this78.handleAddonResults(res);
           });
         }
       }, {
         key: "handleAddonResults",
         value: function handleAddonResults(results) {
-          var _this81 = this;
+          var _this79 = this;
           if (results && results.length) results.forEach(function (item) {
-            var _this81$addonsList;
-            (_this81$addonsList = _this81.addonsList).push.apply(_this81$addonsList, _toConsumableArray(item.fields));
+            var _this79$addonsList;
+            (_this79$addonsList = _this79.addonsList).push.apply(_this79$addonsList, _toConsumableArray(item.fields));
           });
         }
       }, {
         key: "selectAdons",
         value: function selectAdons() {
-          var _this82 = this;
+          var _this80 = this;
           this.options = {};
           var valid = this.validateform();
           if (valid) {
@@ -6219,14 +6217,14 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                 option.selectedLabel = option.selectedLabel.replace(':', '');
                 if (value.selected instanceof Array) {
                   if (value.selected.includes(option.label)) {
-                    _this82.options['addon-' + _this82.product.id + '-' + value.selectedName + '-' + i + '[' + j + ']'] = option.selectedLabel;
+                    _this80.options['addon-' + _this80.product.id + '-' + value.selectedName + '-' + i + '[' + j + ']'] = option.selectedLabel;
                   }
                 } else if (option.label == value.selected && value.type == 'select') {
-                  _this82.options['addon-' + _this82.product.id + '-' + value.selectedName + '-' + i] = option.selectedLabel + '-' + (j + 1);
+                  _this80.options['addon-' + _this80.product.id + '-' + value.selectedName + '-' + i] = option.selectedLabel + '-' + (j + 1);
                 } else if (option.label == value.selected && value.type == 'radiobutton') {
-                  _this82.options['addon-' + _this82.product.id + '-' + value.selectedName + '-' + i + '[' + j + ']'] = option.selectedLabel;
+                  _this80.options['addon-' + _this80.product.id + '-' + value.selectedName + '-' + i + '[' + j + ']'] = option.selectedLabel;
                 } else if (value.type === 'custom_textarea' && option.input && option.input !== '') {
-                  _this82.options['addon-' + _this82.product.id + '-' + value.selectedName + '-' + i + '[' + option.selectedLabel + ']'] = option.input;
+                  _this80.options['addon-' + _this80.product.id + '-' + value.selectedName + '-' + i + '[' + option.selectedLabel + ']'] = option.input;
                 }
               });
               if (value.type == 'custom_text') {
@@ -6235,7 +6233,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                 label = label.split(' ').join('-');
                 label = label.split('.').join('');
                 label = label.replace(':', '');
-                _this82.options['addon-' + _this82.product.id + '-' + label + '-' + i] = value.input;
+                _this80.options['addon-' + _this80.product.id + '-' + label + '-' + i] = value.input;
               }
             });
           }
@@ -6397,7 +6395,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "getFilter",
         value: function getFilter() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee54() {
-            var _this83 = this;
+            var _this81 = this;
             var modal, _yield$modal$onDidDis, data;
             return _regeneratorRuntime().wrap(function _callee54$(_context54) {
               while (1) switch (_context54.prev = _context54.next) {
@@ -6421,7 +6419,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                   if (data) {
                     this.filter = data;
                     Object.keys(this.filter).forEach(function (key) {
-                      return _this83.filter[key] === undefined ? delete _this83.filter[key] : '';
+                      return _this81.filter[key] === undefined ? delete _this81.filter[key] : '';
                     });
                     this.filter.page = 1;
                     this.getProducts();
@@ -6436,13 +6434,13 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "loadData",
         value: function loadData(event) {
-          var _this84 = this;
+          var _this82 = this;
           this.filter.page = this.filter.page + 1;
           this.api.postItem('products', this.filter).then(function (res) {
-            _this84.tempProducts = res;
-            _this84.products.push.apply(_this84.products, _this84.tempProducts);
+            _this82.tempProducts = res;
+            _this82.products.push.apply(_this82.products, _this82.tempProducts);
             event.target.complete();
-            if (_this84.tempProducts.length == 0) _this84.hasMoreItems = false;
+            if (_this82.tempProducts.length == 0) _this82.hasMoreItems = false;
           }, function (err) {
             event.target.complete();
           });
@@ -6450,12 +6448,12 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "getProducts",
         value: function getProducts() {
-          var _this85 = this;
+          var _this83 = this;
           this.loader = true;
           this.api.postItem('products', this.filter).then(function (res) {
             console.log(res);
-            _this85.products = res;
-            _this85.loader = false;
+            _this83.products = res;
+            _this83.loader = false;
           }, function (err) {
             console.log(err);
           });
@@ -6463,11 +6461,11 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "getAttributes",
         value: function getAttributes() {
-          var _this86 = this;
+          var _this84 = this;
           this.api.postItem('product-attributes', {
             category: this.filter.id
           }).then(function (res) {
-            _this86.attributes = res;
+            _this84.attributes = res;
           }, function (err) {
             console.log(err);
           });
@@ -6475,7 +6473,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this87 = this;
+          var _this85 = this;
           if (this.route.snapshot.paramMap.get('id')) {
             this.filter.id = this.route.snapshot.paramMap.get('id');
           }
@@ -6503,15 +6501,15 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
           this.getProducts();
           this.getAttributes();
           this.translate.get(['Oops!', 'Please Select', 'Please wait', 'Options', 'Option', 'Select', 'Item added to cart', 'Message', 'Requested quantity not available']).subscribe(function (translations) {
-            _this87.lan.oops = translations['Oops!'];
-            _this87.lan.PleaseSelect = translations['Please Select'];
-            _this87.lan.Pleasewait = translations['Please wait'];
-            _this87.lan.options = translations['Options'];
-            _this87.lan.option = translations['Option'];
-            _this87.lan.select = translations['Select'];
-            _this87.lan.addToCart = translations['Item added to cart'];
-            _this87.lan.message = translations['Message'];
-            _this87.lan.lowQuantity = translations['Requested quantity not available'];
+            _this85.lan.oops = translations['Oops!'];
+            _this85.lan.PleaseSelect = translations['Please Select'];
+            _this85.lan.Pleasewait = translations['Please wait'];
+            _this85.lan.options = translations['Options'];
+            _this85.lan.option = translations['Option'];
+            _this85.lan.select = translations['Select'];
+            _this85.lan.addToCart = translations['Item added to cart'];
+            _this85.lan.message = translations['Message'];
+            _this85.lan.lowQuantity = translations['Requested quantity not available'];
           });
         }
       }, {
@@ -6568,7 +6566,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "addToCart",
         value: function addToCart(product) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee55() {
-            var _this88 = this;
+            var _this86 = this;
             return _regeneratorRuntime().wrap(function _callee55$(_context55) {
               while (1) switch (_context55.prev = _context55.next) {
                 case 0:
@@ -6596,8 +6594,8 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                   this.options.product_id = product.id;
                   _context55.next = 13;
                   return this.api.postItem('add_to_cart', this.options).then(function (res) {
-                    _this88.cart = res;
-                    _this88.data.updateCart(_this88.cart.cart);
+                    _this86.cart = res;
+                    _this86.data.updateCart(_this86.cart.cart);
                   }, function (err) {
                     console.log(err);
                   });
@@ -6611,13 +6609,13 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "setVariations",
         value: function setVariations(product) {
-          var _this89 = this;
+          var _this87 = this;
           if (product.variationId) {
             this.options.variation_id = product.variationId;
           }
           product.attributes.forEach(function (item) {
             if (item.selected) {
-              _this89.options['variation[attribute_pa_' + item.name + ']'] = item.selected;
+              _this87.options['variation[attribute_pa_' + item.name + ']'] = item.selected;
             }
           });
           for (var i = 0; i < product.attributes.length; i++) {
@@ -6657,7 +6655,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "updateToCart",
         value: function updateToCart(product) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee57() {
-            var _this90 = this;
+            var _this88 = this;
             var params, key;
             return _regeneratorRuntime().wrap(function _callee57$(_context57) {
               while (1) switch (_context57.prev = _context57.next) {
@@ -6693,8 +6691,8 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                   params._wpnonce = this.data.cartNonce;
                   _context57.next = 10;
                   return this.api.postItem('update-cart-item-qty', params).then(function (res) {
-                    _this90.cart = res;
-                    _this90.data.updateCart(_this90.cart.cart_contents);
+                    _this88.cart = res;
+                    _this88.data.updateCart(_this88.cart.cart_contents);
                   }, function (err) {
                     console.log(err);
                   });
@@ -6709,7 +6707,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "deleteFromCart",
         value: function deleteFromCart(product) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee58() {
-            var _this91 = this;
+            var _this89 = this;
             var params, key;
             return _regeneratorRuntime().wrap(function _callee58$(_context58) {
               while (1) switch (_context58.prev = _context58.next) {
@@ -6738,8 +6736,8 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                   _context58.next = 6;
                   return this.api.postItem('update-cart-item-qty', params).then(function (res) {
                     console.log(res);
-                    _this91.cart = res;
-                    _this91.data.updateCart(_this91.cart.cart_contents);
+                    _this89.cart = res;
+                    _this89.data.updateCart(_this89.cart.cart_contents);
                   }, function (err) {
                     console.log(err);
                   });
@@ -7105,7 +7103,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       _createClass(ReviewPage, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this92 = this;
+          var _this90 = this;
           this.filter.page = 1;
           this.id = this.route.snapshot.paramMap.get('id');
           this.filter.product_id = this.id;
@@ -7118,7 +7116,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
           });
           this.route.queryParams.subscribe(function (params) {
             if (params && params.ratingVerificationRequired) {
-              _this92.ratingVerificationRequired = params.ratingVerificationRequired, _this92.customerBoughtProduct = params.customerBoughtProduct;
+              _this90.ratingVerificationRequired = params.ratingVerificationRequired, _this90.customerBoughtProduct = params.customerBoughtProduct;
             }
           });
           this.getReviews();
@@ -7127,19 +7125,19 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "loadData",
         value: function loadData(event) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee59() {
-            var _this93 = this;
+            var _this91 = this;
             return _regeneratorRuntime().wrap(function _callee59$(_context59) {
               while (1) switch (_context59.prev = _context59.next) {
                 case 0:
                   this.filter.page = this.filter.page + 1;
                   _context59.next = 3;
                   return this.api.postItem('product_reviews', this.filter).then(function (res) {
-                    _this93.tempReviews = res;
-                    _this93.reviews.push.apply(_this93.reviews, _this93.tempReviews);
+                    _this91.tempReviews = res;
+                    _this91.reviews.push.apply(_this91.reviews, _this91.tempReviews);
                     event.target.complete();
-                    if (!res) _this93.hasMoreItems = false;
-                    for (var item in _this93.reviews) {
-                      _this93.reviews[item].avatar = Object(_md5__WEBPACK_IMPORTED_MODULE_4__["md5"])(_this93.reviews[item].email);
+                    if (!res) _this91.hasMoreItems = false;
+                    for (var item in _this91.reviews) {
+                      _this91.reviews[item].avatar = Object(_md5__WEBPACK_IMPORTED_MODULE_4__["md5"])(_this91.reviews[item].email);
                     }
                   }, function (err) {
                     event.target.complete();
@@ -7155,36 +7153,36 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "getReviews",
         value: function getReviews() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee60() {
-            var _this94 = this;
+            var _this92 = this;
             return _regeneratorRuntime().wrap(function _callee60$(_context60) {
               while (1) switch (_context60.prev = _context60.next) {
                 case 0:
                   _context60.next = 2;
                   return this.api.postItem('product_reviews', this.filter).then(function (res) {
-                    _this94.reviews = res;
-                    for (var item in _this94.reviews) {
-                      _this94.reviews[item].avatar = Object(_md5__WEBPACK_IMPORTED_MODULE_4__["md5"])(_this94.reviews[item].email);
+                    _this92.reviews = res;
+                    for (var item in _this92.reviews) {
+                      _this92.reviews[item].avatar = Object(_md5__WEBPACK_IMPORTED_MODULE_4__["md5"])(_this92.reviews[item].email);
                     }
-                    _this94.count = _this94.reviews.length;
-                    _this94.reviews.forEach(function (review) {
+                    _this92.count = _this92.reviews.length;
+                    _this92.reviews.forEach(function (review) {
                       if (parseInt(review.rating) == 5) {
-                        _this94.count5 = _this94.count5 + 1;
+                        _this92.count5 = _this92.count5 + 1;
                       } else if (parseInt(review.rating) >= 4) {
-                        _this94.count4 = _this94.count4 + 1;
+                        _this92.count4 = _this92.count4 + 1;
                       } else if (parseInt(review.rating) >= 3) {
-                        _this94.count3 = _this94.count3 + 1;
+                        _this92.count3 = _this92.count3 + 1;
                       } else if (parseInt(review.rating) >= 2) {
-                        _this94.count2 = _this94.count2 + 1;
+                        _this92.count2 = _this92.count2 + 1;
                       } else if (parseInt(review.rating) == 1) {
-                        _this94.count1 = _this94.count1 + 1;
+                        _this92.count1 = _this92.count1 + 1;
                       }
                     });
-                    _this94.showReviews = true;
-                    _this94.count5Percentage = _this94.count5 / _this94.count * 100;
-                    _this94.count4Percentage = _this94.count4 / _this94.count * 100;
-                    _this94.count3Percentage = _this94.count3 / _this94.count * 100;
-                    _this94.count2Percentage = _this94.count2 / _this94.count * 100;
-                    _this94.count1Percentage = _this94.count1 / _this94.count * 100;
+                    _this92.showReviews = true;
+                    _this92.count5Percentage = _this92.count5 / _this92.count * 100;
+                    _this92.count4Percentage = _this92.count4 / _this92.count * 100;
+                    _this92.count3Percentage = _this92.count3 / _this92.count * 100;
+                    _this92.count2Percentage = _this92.count2 / _this92.count * 100;
+                    _this92.count1Percentage = _this92.count1 / _this92.count * 100;
                   }, function (err) {});
                 case 2:
                 case "end":
@@ -7202,16 +7200,16 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "onSubmit",
         value: function onSubmit() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee61() {
-            var _this95 = this;
+            var _this93 = this;
             return _regeneratorRuntime().wrap(function _callee61$(_context61) {
               while (1) switch (_context61.prev = _context61.next) {
                 case 0:
                   this.disableSubmit = true;
                   _context61.next = 3;
                   return this.api.ajaxCall('/wp-comments-post.php', this.form.value).then(function (res) {
-                    _this95.disableSubmit = false;
+                    _this93.disableSubmit = false;
                   }, function (err) {
-                    _this95.disableSubmit = false;
+                    _this93.disableSubmit = false;
                   });
                 case 3:
                 case "end":
@@ -7330,16 +7328,16 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "loadData",
         value: function loadData(event) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee62() {
-            var _this96 = this;
+            var _this94 = this;
             return _regeneratorRuntime().wrap(function _callee62$(_context62) {
               while (1) switch (_context62.prev = _context62.next) {
                 case 0:
                   this.filter.page = this.filter.page + 1;
                   this.api.postItem('products', this.filter).then(function (res) {
-                    _this96.tempProducts = res;
-                    _this96.products.push.apply(_this96.products, _this96.tempProducts);
+                    _this94.tempProducts = res;
+                    _this94.products.push.apply(_this94.products, _this94.tempProducts);
                     event.target.complete();
-                    if (_this96.tempProducts.length == 0) _this96.hasMoreItems = false;
+                    if (_this94.tempProducts.length == 0) _this94.hasMoreItems = false;
                   }, function (err) {
                     event.target.complete();
                   });
@@ -7370,13 +7368,13 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "getProducts",
         value: function getProducts() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee63() {
-            var _this97 = this;
+            var _this95 = this;
             return _regeneratorRuntime().wrap(function _callee63$(_context63) {
               while (1) switch (_context63.prev = _context63.next) {
                 case 0:
                   this.api.postItem('products', this.filter).then(function (res) {
-                    _this97.products = res;
-                    _this97.loading = false;
+                    _this95.products = res;
+                    _this95.loading = false;
                   }, function (err) {
                     console.log(err);
                   });
@@ -7413,7 +7411,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "addToCart",
         value: function addToCart(product) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee64() {
-            var _this98 = this;
+            var _this96 = this;
             return _regeneratorRuntime().wrap(function _callee64$(_context64) {
               while (1) switch (_context64.prev = _context64.next) {
                 case 0:
@@ -7441,8 +7439,8 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                   this.options.product_id = product.id;
                   _context64.next = 13;
                   return this.api.postItem('add_to_cart', this.options).then(function (res) {
-                    _this98.cart = res;
-                    _this98.data.updateCart(_this98.cart.cart);
+                    _this96.cart = res;
+                    _this96.data.updateCart(_this96.cart.cart);
                   }, function (err) {
                     console.log(err);
                   });
@@ -7456,13 +7454,13 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "setVariations",
         value: function setVariations(product) {
-          var _this99 = this;
+          var _this97 = this;
           if (product.variationId) {
             this.options.variation_id = product.variationId;
           }
           product.attributes.forEach(function (item) {
             if (item.selected) {
-              _this99.options['variation[attribute_pa_' + item.name + ']'] = item.selected;
+              _this97.options['variation[attribute_pa_' + item.name + ']'] = item.selected;
             }
           });
           for (var i = 0; i < product.attributes.length; i++) {
@@ -7502,7 +7500,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "updateToCart",
         value: function updateToCart(product) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee66() {
-            var _this100 = this;
+            var _this98 = this;
             var params, key;
             return _regeneratorRuntime().wrap(function _callee66$(_context66) {
               while (1) switch (_context66.prev = _context66.next) {
@@ -7538,8 +7536,8 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                   params._wpnonce = this.data.cartNonce;
                   _context66.next = 10;
                   return this.api.postItem('update-cart-item-qty', params).then(function (res) {
-                    _this100.cart = res;
-                    _this100.data.updateCart(_this100.cart.cart_contents);
+                    _this98.cart = res;
+                    _this98.data.updateCart(_this98.cart.cart_contents);
                   }, function (err) {
                     console.log(err);
                   });
@@ -7554,7 +7552,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "deleteFromCart",
         value: function deleteFromCart(product) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee67() {
-            var _this101 = this;
+            var _this99 = this;
             var params, key;
             return _regeneratorRuntime().wrap(function _callee67$(_context67) {
               while (1) switch (_context67.prev = _context67.next) {
@@ -7583,8 +7581,8 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                   _context67.next = 6;
                   return this.api.postItem('update-cart-item-qty', params).then(function (res) {
                     console.log(res);
-                    _this101.cart = res;
-                    _this101.data.updateCart(_this101.cart.cart_contents);
+                    _this99.cart = res;
+                    _this99.data.updateCart(_this99.cart.cart_contents);
                   }, function (err) {
                     console.log(err);
                   });
@@ -8307,7 +8305,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "getOrder",
         value: function getOrder() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee68() {
-            var _this102 = this;
+            var _this100 = this;
             var loading;
             return _regeneratorRuntime().wrap(function _callee68$(_context68) {
               while (1) switch (_context68.prev = _context68.next) {
@@ -8325,7 +8323,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                 case 5:
                   _context68.next = 7;
                   return this.api.getItem('orders/' + this.id).then(function (res) {
-                    _this102.orders = res;
+                    _this100.orders = res;
                     loading.dismiss();
                   }, function (err) {
                     console.log(err);
@@ -8341,14 +8339,14 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "save",
         value: function save() {
-          var _this103 = this;
+          var _this101 = this;
           this.disableButton = true;
           this.api.putItem('orders/' + this.id, this.orders).then(function (res) {
-            _this103.disableButton = false;
-            _this103.navCtrl.navigateBack('/tabs/account/vendor-orders');
+            _this101.disableButton = false;
+            _this101.navCtrl.navigateBack('/tabs/account/vendor-orders');
           }, function (err) {
             console.log(err);
-            _this103.disableButton = false;
+            _this101.disableButton = false;
           });
         }
       }]);
@@ -8475,14 +8473,14 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "getProduct",
         value: function getProduct() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee69() {
-            var _this104 = this;
+            var _this102 = this;
             return _regeneratorRuntime().wrap(function _callee69$(_context69) {
               while (1) switch (_context69.prev = _context69.next) {
                 case 0:
                   _context69.next = 2;
                   return this.api.getItem('products/' + this.id).then(function (res) {
-                    _this104.product = res;
-                    _this104.handleProduct();
+                    _this102.product = res;
+                    _this102.handleProduct();
                   }, function (err) {
                     console.log(err);
                   });
@@ -8525,13 +8523,13 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "getVariationProducts",
         value: function getVariationProducts() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee70() {
-            var _this105 = this;
+            var _this103 = this;
             return _regeneratorRuntime().wrap(function _callee70$(_context70) {
               while (1) switch (_context70.prev = _context70.next) {
                 case 0:
                   _context70.next = 2;
                   return this.api.getItem('products/' + this.product.id + '/variations').then(function (res) {
-                    _this105.variations = res;
+                    _this103.variations = res;
                   }, function (err) {});
                 case 2:
                 case "end":
@@ -8544,7 +8542,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "getRelatedProducts",
         value: function getRelatedProducts() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee71() {
-            var _this106 = this;
+            var _this104 = this;
             var filter, item;
             return _regeneratorRuntime().wrap(function _callee71$(_context71) {
               while (1) switch (_context71.prev = _context71.next) {
@@ -8557,7 +8555,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                   for (item in this.product.related_ids) filter['include[' + item + ']'] = this.product.related_ids[item];
                   _context71.next = 5;
                   return this.api.getItem('products', filter).then(function (res) {
-                    _this106.relatedProducts = res;
+                    _this104.relatedProducts = res;
                   }, function (err) {});
                 case 5:
                 case "end":
@@ -8570,7 +8568,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "getUpsellProducts",
         value: function getUpsellProducts() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee72() {
-            var _this107 = this;
+            var _this105 = this;
             var filter, item;
             return _regeneratorRuntime().wrap(function _callee72$(_context72) {
               while (1) switch (_context72.prev = _context72.next) {
@@ -8583,7 +8581,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                   for (item in this.product.upsell_ids) filter['include[' + item + ']'] = this.product.upsell_ids[item];
                   _context72.next = 5;
                   return this.api.getItem('products', filter).then(function (res) {
-                    _this107.upsellProducts = res;
+                    _this105.upsellProducts = res;
                   }, function (err) {});
                 case 5:
                 case "end":
@@ -8596,7 +8594,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "getCrossSellProducts",
         value: function getCrossSellProducts() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee73() {
-            var _this108 = this;
+            var _this106 = this;
             var filter, item;
             return _regeneratorRuntime().wrap(function _callee73$(_context73) {
               while (1) switch (_context73.prev = _context73.next) {
@@ -8609,7 +8607,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                   for (item in this.product.cross_sell_ids) filter['include[' + item + ']'] = this.product.cross_sell_ids[item];
                   _context73.next = 5;
                   return this.api.getItem('products', filter).then(function (res) {
-                    _this108.crossSellProducts = res;
+                    _this106.crossSellProducts = res;
                   }, function (err) {});
                 case 5:
                 case "end":
@@ -8622,15 +8620,15 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "getReviews",
         value: function getReviews() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee74() {
-            var _this109 = this;
+            var _this107 = this;
             return _regeneratorRuntime().wrap(function _callee74$(_context74) {
               while (1) switch (_context74.prev = _context74.next) {
                 case 0:
                   _context74.next = 2;
                   return this.api.getItem('products/' + this.product.id + '/reviews').then(function (res) {
-                    _this109.reviews = res;
-                    for (var item in _this109.reviews) {
-                      _this109.reviews[item].avatar = Object(_md5__WEBPACK_IMPORTED_MODULE_8__["md5"])(_this109.reviews[item].email);
+                    _this107.reviews = res;
+                    for (var item in _this107.reviews) {
+                      _this107.reviews[item].avatar = Object(_md5__WEBPACK_IMPORTED_MODULE_8__["md5"])(_this107.reviews[item].email);
                     }
                   }, function (err) {});
                 case 2:
@@ -8682,7 +8680,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "saveProduct",
         value: function saveProduct() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee76() {
-            var _this110 = this;
+            var _this108 = this;
             var id;
             return _regeneratorRuntime().wrap(function _callee76$(_context76) {
               while (1) switch (_context76.prev = _context76.next) {
@@ -8698,9 +8696,9 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                   if (this.product.type == 'external') this.product.manage_stock = false;
                   _context76.next = 7;
                   return this.api.putItem('products/' + this.id, this.product).then(function (res) {
-                    _this110.product = res;
-                    _this110.productData.product = {};
-                    _this110.navCtrl.navigateBack('/tabs/account/vendor-products');
+                    _this108.product = res;
+                    _this108.productData.product = {};
+                    _this108.navCtrl.navigateBack('/tabs/account/vendor-products');
                   }, function (err) {
                     console.log(err);
                   });
@@ -8714,15 +8712,15 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "picker",
         value: function picker() {
-          var _this111 = this;
+          var _this109 = this;
           console.log('hello');
           var options = {
             maximumImagesCount: 1
           };
           this.photos = new Array();
           this.imagePicker.getPictures(options).then(function (results) {
-            _this111.reduceImages(results).then(function (results) {
-              return _this111.handleUpload(results);
+            _this109.reduceImages(results).then(function (results) {
+              return _this109.handleUpload(results);
             });
           }, function (err) {
             console.log(err);
@@ -8736,15 +8734,15 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "reduceImages",
         value: function reduceImages(selected_pictures) {
-          var _this112 = this;
+          var _this110 = this;
           return selected_pictures.reduce(function (promise, item) {
             return promise.then(function (result) {
-              return _this112.crop.crop(item, {
+              return _this110.crop.crop(item, {
                 quality: 75,
                 targetHeight: 100,
                 targetWidth: 100
               }).then(function (cropped_image) {
-                return _this112.photos = cropped_image;
+                return _this110.photos = cropped_image;
               });
             });
           }, Promise.resolve());
@@ -8752,7 +8750,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "upload",
         value: function upload() {
-          var _this113 = this;
+          var _this111 = this;
           this.uploadingImage = true;
           var fileTransfer = this.transfer.create();
           var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_11__["Headers"]();
@@ -8765,11 +8763,11 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
             }
           };
           fileTransfer.upload(this.photos, this.config.url + '/wp-admin/admin-ajax.php?action=mstoreapp_upload_image', options).then(function (data) {
-            _this113.uploadingImage = false;
-            _this113.imageresult = JSON.parse(data.response);
-            _this113.product.images[_this113.imageIndex] = {};
-            _this113.product.images[_this113.imageIndex].src = _this113.imageresult.url;
-            _this113.imageIndex = _this113.imageIndex + 1;
+            _this111.uploadingImage = false;
+            _this111.imageresult = JSON.parse(data.response);
+            _this111.product.images[_this111.imageIndex] = {};
+            _this111.product.images[_this111.imageIndex].src = _this111.imageresult.url;
+            _this111.imageIndex = _this111.imageIndex + 1;
             // success
           }, function (err) {
             //this.functions.showAlert("error", err);
@@ -8779,7 +8777,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "replaceImage",
         value: function replaceImage(index) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee77() {
-            var _this114 = this;
+            var _this112 = this;
             var actionSheet;
             return _regeneratorRuntime().wrap(function _callee77$(_context77) {
               while (1) switch (_context77.prev = _context77.next) {
@@ -8792,8 +8790,8 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                       role: 'destructive',
                       icon: 'trash',
                       handler: function handler() {
-                        _this114.product.images.splice(index, 1);
-                        _this114.imageIndex = _this114.imageIndex - 1;
+                        _this112.product.images.splice(index, 1);
+                        _this112.imageIndex = _this112.imageIndex - 1;
                       }
                     }, {
                       text: 'Edit Image',
@@ -8802,10 +8800,10 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                         var options = {
                           maximumImagesCount: 1
                         };
-                        _this114.photos = new Array();
-                        _this114.imagePicker.getPictures(options).then(function (results) {
-                          _this114.reduceImages(results).then(function (results) {
-                            return _this114.replaceUpload(index);
+                        _this112.photos = new Array();
+                        _this112.imagePicker.getPictures(options).then(function (results) {
+                          _this112.reduceImages(results).then(function (results) {
+                            return _this112.replaceUpload(index);
                           });
                         }, function (err) {
                           //this.functions.showAlert("error", err);
@@ -8834,7 +8832,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "replaceUpload",
         value: function replaceUpload(index) {
-          var _this115 = this;
+          var _this113 = this;
           this.uploadingImage = true;
           var fileTransfer = this.transfer.create();
           var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_11__["Headers"]();
@@ -8847,9 +8845,9 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
             }
           };
           fileTransfer.upload(this.photos, this.config.url + '/wp-admin/admin-ajax.php?action=mstoreapp_upload_image', options).then(function (data) {
-            _this115.uploadingImage = false;
-            _this115.imageresult = JSON.parse(data.response);
-            _this115.product.images[index].src = _this115.imageresult.url;
+            _this113.uploadingImage = false;
+            _this113.imageresult = JSON.parse(data.response);
+            _this113.product.images[index].src = _this113.imageresult.url;
             // success
           }, function (err) {
             //this.functions.showAlert("error", err);
@@ -9236,14 +9234,14 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "getProduct",
         value: function getProduct() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee78() {
-            var _this116 = this;
+            var _this114 = this;
             return _regeneratorRuntime().wrap(function _callee78$(_context78) {
               while (1) switch (_context78.prev = _context78.next) {
                 case 0:
                   _context78.next = 2;
                   return this.api.getItem('products/' + this.id).then(function (res) {
-                    _this116.product = res;
-                    _this116.handleProduct();
+                    _this114.product = res;
+                    _this114.handleProduct();
                   }, function (err) {
                     console.log(err);
                   });
@@ -9366,7 +9364,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "saveProduct",
         value: function saveProduct() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee80() {
-            var _this117 = this;
+            var _this115 = this;
             var id;
             return _regeneratorRuntime().wrap(function _callee80$(_context80) {
               while (1) switch (_context80.prev = _context80.next) {
@@ -9382,8 +9380,8 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                   if (this.product.type == 'external') this.product.manage_stock = false;
                   _context80.next = 7;
                   return this.api.putItem('products/' + this.id, this.product).then(function (res) {
-                    _this117.product = res;
-                    _this117.navCtrl.navigateBack('/tabs/account/vendor-products/edit-product/' + _this117.productData.product.id);
+                    _this115.product = res;
+                    _this115.navCtrl.navigateBack('/tabs/account/vendor-products/edit-product/' + _this115.productData.product.id);
                   }, function (err) {
                     console.log(err);
                   });
@@ -9397,15 +9395,15 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "picker",
         value: function picker() {
-          var _this118 = this;
+          var _this116 = this;
           console.log('hello');
           var options = {
             maximumImagesCount: 1
           };
           this.photos = new Array();
           this.imagePicker.getPictures(options).then(function (results) {
-            _this118.reduceImages(results).then(function (results) {
-              return _this118.handleUpload(results);
+            _this116.reduceImages(results).then(function (results) {
+              return _this116.handleUpload(results);
             });
           }, function (err) {
             console.log(err);
@@ -9419,15 +9417,15 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "reduceImages",
         value: function reduceImages(selected_pictures) {
-          var _this119 = this;
+          var _this117 = this;
           return selected_pictures.reduce(function (promise, item) {
             return promise.then(function (result) {
-              return _this119.crop.crop(item, {
+              return _this117.crop.crop(item, {
                 quality: 75,
                 targetHeight: 100,
                 targetWidth: 100
               }).then(function (cropped_image) {
-                return _this119.photos = cropped_image;
+                return _this117.photos = cropped_image;
               });
             });
           }, Promise.resolve());
@@ -9435,7 +9433,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "upload",
         value: function upload() {
-          var _this120 = this;
+          var _this118 = this;
           this.uploadingImage = true;
           var fileTransfer = this.transfer.create();
           var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_10__["Headers"]();
@@ -9448,11 +9446,11 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
             }
           };
           fileTransfer.upload(this.photos, this.config.url + '/wp-admin/admin-ajax.php?action=mstoreapp_upload_image', options).then(function (data) {
-            _this120.uploadingImage = false;
-            _this120.imageresult = JSON.parse(data.response);
-            _this120.product.images[_this120.imageIndex] = {};
-            _this120.product.images[_this120.imageIndex].src = _this120.imageresult.url;
-            _this120.imageIndex = _this120.imageIndex + 1;
+            _this118.uploadingImage = false;
+            _this118.imageresult = JSON.parse(data.response);
+            _this118.product.images[_this118.imageIndex] = {};
+            _this118.product.images[_this118.imageIndex].src = _this118.imageresult.url;
+            _this118.imageIndex = _this118.imageIndex + 1;
             // success
           }, function (err) {
             //this.functions.showAlert("error", err);
@@ -9462,7 +9460,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "replaceImage",
         value: function replaceImage(index) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee81() {
-            var _this121 = this;
+            var _this119 = this;
             var actionSheet;
             return _regeneratorRuntime().wrap(function _callee81$(_context81) {
               while (1) switch (_context81.prev = _context81.next) {
@@ -9475,8 +9473,8 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                       role: 'destructive',
                       icon: 'trash',
                       handler: function handler() {
-                        _this121.product.images.splice(index, 1);
-                        _this121.imageIndex = _this121.imageIndex - 1;
+                        _this119.product.images.splice(index, 1);
+                        _this119.imageIndex = _this119.imageIndex - 1;
                       }
                     }, {
                       text: 'Edit Image',
@@ -9485,10 +9483,10 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                         var options = {
                           maximumImagesCount: 1
                         };
-                        _this121.photos = new Array();
-                        _this121.imagePicker.getPictures(options).then(function (results) {
-                          _this121.reduceImages(results).then(function (results) {
-                            return _this121.replaceUpload(index);
+                        _this119.photos = new Array();
+                        _this119.imagePicker.getPictures(options).then(function (results) {
+                          _this119.reduceImages(results).then(function (results) {
+                            return _this119.replaceUpload(index);
                           });
                         }, function (err) {
                           //this.functions.showAlert("error", err);
@@ -9517,7 +9515,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "replaceUpload",
         value: function replaceUpload(index) {
-          var _this122 = this;
+          var _this120 = this;
           this.uploadingImage = true;
           var fileTransfer = this.transfer.create();
           var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_10__["Headers"]();
@@ -9530,9 +9528,9 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
             }
           };
           fileTransfer.upload(this.photos, this.config.url + '/wp-admin/admin-ajax.php?action=mstoreapp_upload_image', options).then(function (data) {
-            _this122.uploadingImage = false;
-            _this122.imageresult = JSON.parse(data.response);
-            _this122.product.images[index].src = _this122.imageresult.url;
+            _this120.uploadingImage = false;
+            _this120.imageresult = JSON.parse(data.response);
+            _this120.product.images[index].src = _this120.imageresult.url;
             // success
           }, function (err) {
             //this.functions.showAlert("error", err);
@@ -9659,10 +9657,10 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "getOrders",
         value: function getOrders() {
-          var _this123 = this;
+          var _this121 = this;
           this.api.getItem('orders', this.filter).then(function (res) {
-            _this123.orders = res;
-            _this123.loader = false;
+            _this121.orders = res;
+            _this121.loader = false;
           }, function (err) {
             console.log(err);
           });
@@ -9670,12 +9668,12 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "loadData",
         value: function loadData(event) {
-          var _this124 = this;
+          var _this122 = this;
           this.filter.page = this.filter.page + 1;
           this.api.getItem('orders', this.filter).then(function (res) {
-            _this124.orders.push.apply(_this124.orders, res);
+            _this122.orders.push.apply(_this122.orders, res);
             event.target.complete();
-            if (!res) _this124.hasMoreItems = false;
+            if (!res) _this122.hasMoreItems = false;
           }, function (err) {
             event.target.complete();
           });
@@ -9698,10 +9696,10 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "getWooCommerceProductVendorOrders",
         value: function getWooCommerceProductVendorOrders() {
-          var _this125 = this;
+          var _this123 = this;
           this.api.postItem('vendor-order-list', this.filter).then(function (res) {
-            _this125.orders = res;
-            _this125.loader = false;
+            _this123.orders = res;
+            _this123.loader = false;
           }, function (err) {
             console.log(err);
           });
@@ -9710,7 +9708,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "updateOrderStatus",
         value: function updateOrderStatus(order) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee82() {
-            var _this126 = this;
+            var _this124 = this;
             var actionSheet;
             return _regeneratorRuntime().wrap(function _callee82$(_context82) {
               while (1) switch (_context82.prev = _context82.next) {
@@ -9722,7 +9720,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                       text: 'Fulfilled',
                       icon: 'checkmark',
                       handler: function handler() {
-                        _this126.api.postItem('set_fulfill_status', {
+                        _this124.api.postItem('set_fulfill_status', {
                           status: 'fulfilled',
                           order_item_id: order.order_item_id
                         }).then(function (res) {
@@ -9735,7 +9733,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                       text: 'Unfulfilled',
                       icon: 'close',
                       handler: function handler() {
-                        _this126.api.postItem('set_fulfill_status', {
+                        _this124.api.postItem('set_fulfill_status', {
                           status: 'unfulfilled',
                           order_item_id: order.order_item_id
                         }).then(function (res) {
@@ -10171,18 +10169,18 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "picker",
         value: function picker() {
-          var _this127 = this;
+          var _this125 = this;
           var options = {
             maximumImagesCount: 1
           };
           this.photos = new Array();
           this.imagePicker.getPictures(options).then(function (results) {
             console.log(results);
-            _this127.reduceImages(results).then(function (results) {
-              return _this127.handleUpload(results);
+            _this125.reduceImages(results).then(function (results) {
+              return _this125.handleUpload(results);
             });
           }, function (err) {
-            _this127.err = err;
+            _this125.err = err;
           });
         }
       }, {
@@ -10193,17 +10191,17 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "reduceImages",
         value: function reduceImages(selected_pictures) {
-          var _this128 = this;
+          var _this126 = this;
           return selected_pictures.reduce(function (promise, item) {
             return promise.then(function (result) {
-              return _this128.crop.crop(item, {
+              return _this126.crop.crop(item, {
                 quality: 75,
                 targetHeight: 100,
                 targetWidth: 100
               }).then(function (cropped_image) {
-                return _this128.photos = cropped_image;
+                return _this126.photos = cropped_image;
               }, function (error) {
-                return _this128.err = error;
+                return _this126.err = error;
               });
             });
           }, Promise.resolve());
@@ -10211,7 +10209,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "upload",
         value: function upload() {
-          var _this129 = this;
+          var _this127 = this;
           this.uploadingImageSpinner = true;
           var fileTransfer = this.transfer.create();
           var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_8__["Headers"]();
@@ -10224,11 +10222,11 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
             }
           };
           fileTransfer.upload(this.photos, this.config.url + '/wp-admin/admin-ajax.php?action=mstoreapp_upload_image', options).then(function (data) {
-            _this129.uploadingImageSpinner = false;
-            _this129.imageresult = JSON.parse(data.response);
-            _this129.vendor.product.images[_this129.imageIndex] = {};
-            _this129.vendor.product.images[_this129.imageIndex].src = _this129.imageresult.url;
-            _this129.imageIndex = _this129.imageIndex + 1;
+            _this127.uploadingImageSpinner = false;
+            _this127.imageresult = JSON.parse(data.response);
+            _this127.vendor.product.images[_this127.imageIndex] = {};
+            _this127.vendor.product.images[_this127.imageIndex].src = _this127.imageresult.url;
+            _this127.imageIndex = _this127.imageIndex + 1;
             // success
           }, function (err) {
             //this.functions.showAlert("error", err);
@@ -10238,7 +10236,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "replaceImage",
         value: function replaceImage(index) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee84() {
-            var _this130 = this;
+            var _this128 = this;
             var actionSheet;
             return _regeneratorRuntime().wrap(function _callee84$(_context84) {
               while (1) switch (_context84.prev = _context84.next) {
@@ -10251,8 +10249,8 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                       role: 'destructive',
                       icon: 'trash',
                       handler: function handler() {
-                        _this130.vendor.product.images.splice(index, 1);
-                        _this130.imageIndex = _this130.imageIndex - 1;
+                        _this128.vendor.product.images.splice(index, 1);
+                        _this128.imageIndex = _this128.imageIndex - 1;
                       }
                     }, {
                       text: 'Edit Image',
@@ -10261,10 +10259,10 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                         var options = {
                           maximumImagesCount: 1
                         };
-                        _this130.photos = new Array();
-                        _this130.imagePicker.getPictures(options).then(function (results) {
-                          _this130.reduceImages(results).then(function (results) {
-                            return _this130.replaceUpload(index);
+                        _this128.photos = new Array();
+                        _this128.imagePicker.getPictures(options).then(function (results) {
+                          _this128.reduceImages(results).then(function (results) {
+                            return _this128.replaceUpload(index);
                           });
                         }, function (err) {
                           //this.functions.showAlert("error", err);
@@ -10293,7 +10291,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       }, {
         key: "replaceUpload",
         value: function replaceUpload(index) {
-          var _this131 = this;
+          var _this129 = this;
           this.uploadingImageSpinner = true;
           var fileTransfer = this.transfer.create();
           var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_8__["Headers"]();
@@ -10306,9 +10304,9 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
             }
           };
           fileTransfer.upload(this.photos, this.config.url + '/wp-admin/admin-ajax.php?action=mstoreapp_upload_image', options).then(function (data) {
-            _this131.uploadingImageSpinner = false;
-            _this131.imageresult = JSON.parse(data.response);
-            _this131.vendor.product.images[index].src = _this131.imageresult.url;
+            _this129.uploadingImageSpinner = false;
+            _this129.imageresult = JSON.parse(data.response);
+            _this129.vendor.product.images[index].src = _this129.imageresult.url;
             // success
           }, function (err) {
             //this.functions.showAlert("error", err);
@@ -10330,7 +10328,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "submit",
         value: function submit() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee85() {
-            var _this132 = this;
+            var _this130 = this;
             return _regeneratorRuntime().wrap(function _callee85$(_context85) {
               while (1) switch (_context85.prev = _context85.next) {
                 case 0:
@@ -10349,23 +10347,23 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                 case 6:
                   this.api.wcpost('products', this.vendor.product).then(function (res) {
                     //DOKAN AND WCFM Plugin
-                    _this132.res = res;
-                    _this132.api.postItem('update-vendor-product', {
-                      id: _this132.res.id
+                    _this130.res = res;
+                    _this130.api.postItem('update-vendor-product', {
+                      id: _this130.res.id
                     }).then(function (res) {
                       console.log(res);
                     }, function (err) {
                       console.log(err);
                     });
                     //DOKAN AND WCFM Plugin
-                    _this132.vendor.product = {};
-                    _this132.vendor.product.categories = [];
-                    _this132.vendor.product.images = [];
-                    _this132.vendor.product.dimensions = {};
-                    _this132.loading.dismiss();
-                    _this132.navCtrl.navigateBack('tabs/account');
+                    _this130.vendor.product = {};
+                    _this130.vendor.product.categories = [];
+                    _this130.vendor.product.images = [];
+                    _this130.vendor.product.dimensions = {};
+                    _this130.loading.dismiss();
+                    _this130.navCtrl.navigateBack('tabs/account');
                   }, function (err) {
-                    _this132.loading.dismiss();
+                    _this130.loading.dismiss();
                     console.log(err);
                   });
                 case 7:
@@ -10630,17 +10628,17 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "loadData",
         value: function loadData(event) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee87() {
-            var _this133 = this;
+            var _this131 = this;
             return _regeneratorRuntime().wrap(function _callee87$(_context87) {
               while (1) switch (_context87.prev = _context87.next) {
                 case 0:
                   this.filter.page = this.filter.page + 1;
                   _context87.next = 3;
                   return this.api.getItem('products', this.filter).then(function (res) {
-                    _this133.tempProducts = res;
-                    _this133.products.push.apply(_this133.products, _this133.tempProducts);
+                    _this131.tempProducts = res;
+                    _this131.products.push.apply(_this131.products, _this131.tempProducts);
                     event.target.complete();
-                    if (_this133.tempProducts.length == 0) _this133.hasMoreItems = false;
+                    if (_this131.tempProducts.length == 0) _this131.hasMoreItems = false;
                   }, function (err) {
                     event.target.complete();
                   });
@@ -10655,15 +10653,15 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "getProducts",
         value: function getProducts() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee88() {
-            var _this134 = this;
+            var _this132 = this;
             return _regeneratorRuntime().wrap(function _callee88$(_context88) {
               while (1) switch (_context88.prev = _context88.next) {
                 case 0:
                   this.loader = true;
                   _context88.next = 3;
                   return this.api.getItem('products', this.filter).then(function (res) {
-                    _this134.products = res;
-                    _this134.loader = false;
+                    _this132.products = res;
+                    _this132.loader = false;
                   }, function (err) {
                     console.log(err);
                   });
@@ -10678,7 +10676,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "getAttributes",
         value: function getAttributes() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee89() {
-            var _this135 = this;
+            var _this133 = this;
             return _regeneratorRuntime().wrap(function _callee89$(_context89) {
               while (1) switch (_context89.prev = _context89.next) {
                 case 0:
@@ -10686,7 +10684,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                   return this.api.postItem('product-attributes', {
                     category: this.filter.category
                   }).then(function (res) {
-                    _this135.attributes = res;
+                    _this133.attributes = res;
                   }, function (err) {
                     console.log(err);
                   });
@@ -10735,7 +10733,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "delete",
         value: function _delete(product) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee90() {
-            var _this136 = this;
+            var _this134 = this;
             var alert;
             return _regeneratorRuntime().wrap(function _callee90$(_context90) {
               while (1) switch (_context90.prev = _context90.next) {
@@ -10754,8 +10752,8 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                     }, {
                       text: 'Delete',
                       handler: function handler() {
-                        _this136.api.deleteItem('products/' + product.id).then(function (res) {
-                          _this136.getProducts();
+                        _this134.api.deleteItem('products/' + product.id).then(function (res) {
+                          _this134.getProducts();
                         }, function (err) {
                           console.log(err);
                         });
@@ -10952,13 +10950,13 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "getVendors",
         value: function getVendors() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee91() {
-            var _this137 = this;
+            var _this135 = this;
             return _regeneratorRuntime().wrap(function _callee91$(_context91) {
               while (1) switch (_context91.prev = _context91.next) {
                 case 0:
                   _context91.next = 2;
                   return this.api.postItem('vendors', this.filter).then(function (res) {
-                    if (res) _this137.vendors = res;
+                    if (res) _this135.vendors = res;
                   }, function (err) {
                     console.log(err);
                   });
@@ -10973,7 +10971,7 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "loadData",
         value: function loadData(event) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee92() {
-            var _this138 = this;
+            var _this136 = this;
             return _regeneratorRuntime().wrap(function _callee92$(_context92) {
               while (1) switch (_context92.prev = _context92.next) {
                 case 0:
@@ -10981,10 +10979,10 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
                   /* Common */
                   _context92.next = 3;
                   return this.api.postItem('vendors', this.filter).then(function (res) {
-                    _this138.tempVendor = res;
-                    _this138.vendors.push.apply(_this138.vendors, res);
+                    _this136.tempVendor = res;
+                    _this136.vendors.push.apply(_this136.vendors, res);
                     event.target.complete();
-                    if (_this138.tempVendor && _this138.tempVendor.length == 0) _this138.hasMoreItems = false;else if (!_this138.tempVendor || !_this138.tempVendor.length) event.target.complete();
+                    if (_this136.tempVendor && _this136.tempVendor.length == 0) _this136.hasMoreItems = false;else if (!_this136.tempVendor || !_this136.tempVendor.length) event.target.complete();
                   }, function (err) {
                     event.target.complete();
                   });
@@ -11000,13 +10998,13 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "getWcVendors",
         value: function getWcVendors() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee93() {
-            var _this139 = this;
+            var _this137 = this;
             return _regeneratorRuntime().wrap(function _callee93$(_context93) {
               while (1) switch (_context93.prev = _context93.next) {
                 case 0:
                   _context93.next = 2;
                   return this.api.WCMPVendor('vendors', this.filter).then(function (res) {
-                    _this139.vendors = res;
+                    _this137.vendors = res;
                   }, function (err) {
                     console.log(err);
                   });
@@ -11021,13 +11019,13 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "getDokanVendors",
         value: function getDokanVendors() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee94() {
-            var _this140 = this;
+            var _this138 = this;
             return _regeneratorRuntime().wrap(function _callee94$(_context94) {
               while (1) switch (_context94.prev = _context94.next) {
                 case 0:
                   _context94.next = 2;
                   return this.api.postItem('vendors-list', this.filter).then(function (res) {
-                    _this140.vendors = res;
+                    _this138.vendors = res;
                   }, function (err) {
                     console.log(err);
                   });
@@ -11042,13 +11040,13 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         key: "getWCFMVendors",
         value: function getWCFMVendors() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee95() {
-            var _this141 = this;
+            var _this139 = this;
             return _regeneratorRuntime().wrap(function _callee95$(_context95) {
               while (1) switch (_context95.prev = _context95.next) {
                 case 0:
                   _context95.next = 2;
                   return this.api.postItem('wcfm-vendor-list', this.filter).then(function (res) {
-                    _this141.vendors = res;
+                    _this139.vendors = res;
                   }, function (err) {
                     console.log(err);
                   });
