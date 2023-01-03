@@ -20,10 +20,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-7a8b7a1c.js */ "./node_modules/@ionic/core/dist/esm/index-7a8b7a1c.js");
 /* harmony import */ var _ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-63a97a32.js */ "./node_modules/@ionic/core/dist/esm/ionic-global-63a97a32.js");
 /* harmony import */ var _theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./theme-ff3fc52f.js */ "./node_modules/@ionic/core/dist/esm/theme-ff3fc52f.js");
-/* harmony import */ var _helpers_1457892a_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./helpers-1457892a.js */ "./node_modules/@ionic/core/dist/esm/helpers-1457892a.js");
+/* harmony import */ var _helpers_dd7e4b7b_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./helpers-dd7e4b7b.js */ "./node_modules/@ionic/core/dist/esm/helpers-dd7e4b7b.js");
 /* harmony import */ var _cubic_bezier_eea9a7a9_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./cubic-bezier-eea9a7a9.js */ "./node_modules/@ionic/core/dist/esm/cubic-bezier-eea9a7a9.js");
-/* harmony import */ var _framework_delegate_94e770cc_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./framework-delegate-94e770cc.js */ "./node_modules/@ionic/core/dist/esm/framework-delegate-94e770cc.js");
-/* harmony import */ var _index_a7711c1e_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./index-a7711c1e.js */ "./node_modules/@ionic/core/dist/esm/index-a7711c1e.js");
+/* harmony import */ var _framework_delegate_4392cd63_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./framework-delegate-4392cd63.js */ "./node_modules/@ionic/core/dist/esm/framework-delegate-4392cd63.js");
+/* harmony import */ var _index_931440b1_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./index-931440b1.js */ "./node_modules/@ionic/core/dist/esm/index-931440b1.js");
 
 
 
@@ -43,13 +43,13 @@ const App = class {
       rIC(async () => {
         const isHybrid = Object(_ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["a"])(window, 'hybrid');
         if (!_ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["c"].getBoolean('_testing')) {
-          __webpack_require__.e(/*! import() | tap-click-7ddcdebb-js */ "tap-click-7ddcdebb-js").then(__webpack_require__.bind(null, /*! ./tap-click-7ddcdebb.js */ "./node_modules/@ionic/core/dist/esm/tap-click-7ddcdebb.js")).then(module => module.startTapClick(_ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["c"]));
+          __webpack_require__.e(/*! import() | tap-click-cc1ae2b2-js */ "tap-click-cc1ae2b2-js").then(__webpack_require__.bind(null, /*! ./tap-click-cc1ae2b2.js */ "./node_modules/@ionic/core/dist/esm/tap-click-cc1ae2b2.js")).then(module => module.startTapClick(_ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["c"]));
         }
         if (_ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["c"].getBoolean('statusTap', isHybrid)) {
-          __webpack_require__.e(/*! import() | status-tap-9cb487b1-js */ "status-tap-9cb487b1-js").then(__webpack_require__.bind(null, /*! ./status-tap-9cb487b1.js */ "./node_modules/@ionic/core/dist/esm/status-tap-9cb487b1.js")).then(module => module.startStatusTap());
+          __webpack_require__.e(/*! import() | status-tap-5c3a5bca-js */ "status-tap-5c3a5bca-js").then(__webpack_require__.bind(null, /*! ./status-tap-5c3a5bca.js */ "./node_modules/@ionic/core/dist/esm/status-tap-5c3a5bca.js")).then(module => module.startStatusTap());
         }
         if (_ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["c"].getBoolean('inputShims', needInputShims())) {
-          __webpack_require__.e(/*! import() | input-shims-ce03ee9f-js */ "input-shims-ce03ee9f-js").then(__webpack_require__.bind(null, /*! ./input-shims-ce03ee9f.js */ "./node_modules/@ionic/core/dist/esm/input-shims-ce03ee9f.js")).then(module => module.startInputShims(_ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["c"]));
+          __webpack_require__.e(/*! import() | input-shims-73f15161-js */ "input-shims-73f15161-js").then(__webpack_require__.bind(null, /*! ./input-shims-73f15161.js */ "./node_modules/@ionic/core/dist/esm/input-shims-73f15161.js")).then(module => module.startInputShims(_ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["c"]));
         }
         const hardwareBackButtonModule = await Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./hardware-back-button-4a6b37fb.js */ "./node_modules/@ionic/core/dist/esm/hardware-back-button-4a6b37fb.js"));
         if (_ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["c"].getBoolean('hardwareBackButton', isHybrid)) {
@@ -493,7 +493,7 @@ const createHeaderIndex = (headerEl) => {
 const handleContentScroll = (scrollEl, scrollHeaderIndex, contentEl) => {
   Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["f"])(() => {
     const scrollTop = scrollEl.scrollTop;
-    const scale = Object(_helpers_1457892a_js__WEBPACK_IMPORTED_MODULE_3__["k"])(1, 1 + (-scrollTop / 500), 1.1);
+    const scale = Object(_helpers_dd7e4b7b_js__WEBPACK_IMPORTED_MODULE_3__["j"])(1, 1 + (-scrollTop / 500), 1.1);
     // Native refresher should not cause titles to scale
     const nativeRefresher = contentEl.querySelector('ion-refresher.refresher-native');
     if (nativeRefresher === null) {
@@ -613,7 +613,7 @@ const Header = class {
     this.translucent = false;
   }
   componentWillLoad() {
-    this.inheritedAttributes = Object(_helpers_1457892a_js__WEBPACK_IMPORTED_MODULE_3__["i"])(this.el);
+    this.inheritedAttributes = Object(_helpers_dd7e4b7b_js__WEBPACK_IMPORTED_MODULE_3__["i"])(this.el, ['role']);
   }
   async componentDidLoad() {
     await this.checkCollapsibleHeader();
@@ -756,7 +756,7 @@ const RouterOutlet = class {
         this.swipeHandler.onStart();
       }
     };
-    this.gesture = (await __webpack_require__.e(/*! import() | swipe-back-1bbd08e0-js */ "swipe-back-1bbd08e0-js").then(__webpack_require__.bind(null, /*! ./swipe-back-1bbd08e0.js */ "./node_modules/@ionic/core/dist/esm/swipe-back-1bbd08e0.js"))).createSwipeBackGesture(this.el, () => !this.gestureOrAnimationInProgress && !!this.swipeHandler && this.swipeHandler.canStart(), () => onStart(), step => this.ani && this.ani.progressStep(step), (shouldComplete, step, dur) => {
+    this.gesture = (await __webpack_require__.e(/*! import() | swipe-back-fae97365-js */ "swipe-back-fae97365-js").then(__webpack_require__.bind(null, /*! ./swipe-back-fae97365.js */ "./node_modules/@ionic/core/dist/esm/swipe-back-fae97365.js"))).createSwipeBackGesture(this.el, () => !this.gestureOrAnimationInProgress && !!this.swipeHandler && this.swipeHandler.canStart(), () => onStart(), step => this.ani && this.ani.progressStep(step), (shouldComplete, step, dur) => {
       if (this.ani) {
         this.ani.onFinish(() => {
           this.gestureOrAnimationInProgress = false;
@@ -837,12 +837,12 @@ const RouterOutlet = class {
     }
     // attach entering view to DOM
     const leavingEl = this.activeEl;
-    const enteringEl = await Object(_framework_delegate_94e770cc_js__WEBPACK_IMPORTED_MODULE_5__["a"])(this.delegate, this.el, component, ['ion-page', 'ion-page-invisible'], params);
+    const enteringEl = await Object(_framework_delegate_4392cd63_js__WEBPACK_IMPORTED_MODULE_5__["a"])(this.delegate, this.el, component, ['ion-page', 'ion-page-invisible'], params);
     this.activeComponent = component;
     this.activeEl = enteringEl;
     // commit animation
     await this.commit(enteringEl, leavingEl, opts);
-    await Object(_framework_delegate_94e770cc_js__WEBPACK_IMPORTED_MODULE_5__["d"])(this.delegate, leavingEl);
+    await Object(_framework_delegate_4392cd63_js__WEBPACK_IMPORTED_MODULE_5__["d"])(this.delegate, leavingEl);
     return true;
   }
   async transition(enteringEl, leavingEl, opts = {}) {
@@ -854,7 +854,7 @@ const RouterOutlet = class {
     const { el, mode } = this;
     const animated = this.animated && _ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["c"].getBoolean('animated', true);
     const animationBuilder = opts.animationBuilder || this.animation || _ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["c"].get('navAnimation');
-    await Object(_index_a7711c1e_js__WEBPACK_IMPORTED_MODULE_6__["t"])(Object.assign(Object.assign({ mode,
+    await Object(_index_931440b1_js__WEBPACK_IMPORTED_MODULE_6__["t"])(Object.assign(Object.assign({ mode,
       animated,
       enteringEl,
       leavingEl, baseEl: el, progressCallback: (opts.progressAnimation

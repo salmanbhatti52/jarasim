@@ -310,6 +310,14 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "runs": true
     },
     {
+      "id": "cordova-plugin-crop.CropPlugin",
+      "file": "plugins/cordova-plugin-crop/www/crop.js",
+      "pluginId": "cordova-plugin-crop",
+      "clobbers": [
+        "plugins.crop"
+      ]
+    },
+    {
       "id": "cordova-plugin-device.device",
       "file": "plugins/cordova-plugin-device/www/device.js",
       "pluginId": "cordova-plugin-device",
@@ -446,6 +454,14 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       ]
     },
     {
+      "id": "cordova-plugin-telerik-imagepicker.ImagePicker",
+      "file": "plugins/cordova-plugin-telerik-imagepicker/www/imagepicker.js",
+      "pluginId": "cordova-plugin-telerik-imagepicker",
+      "clobbers": [
+        "plugins.imagePicker"
+      ]
+    },
+    {
       "id": "es6-promise-plugin.Promise",
       "file": "plugins/es6-promise-plugin/www/promise.js",
       "pluginId": "es6-promise-plugin",
@@ -466,14 +482,6 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "SQLitePlugin"
       ]
-    },
-    {
-      "id": "cordova-plugin-crop.CropPlugin",
-      "file": "plugins/cordova-plugin-crop/www/crop.js",
-      "pluginId": "cordova-plugin-crop",
-      "clobbers": [
-        "plugins.crop"
-      ]
     }
   ];
   module.exports.metadata = {
@@ -486,6 +494,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-dialogs": "2.0.2",
     "cordova-plugin-nativestorage": "2.3.2",
     "cordova-plugin-apprate": "1.7.2",
+    "cordova-plugin-crop": "0.3.1",
     "cordova-plugin-device": "2.0.3",
     "cordova-plugin-email-composer": "0.10.0",
     "cordova-plugin-facebook4": "6.4.0",
@@ -499,10 +508,10 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-request-location-accuracy": "2.3.0",
     "cordova-plugin-splashscreen": "6.0.0",
     "cordova-plugin-statusbar": "3.0.0",
+    "cordova-plugin-telerik-imagepicker": "2.3.5",
     "cordova-plugin-whitelist": "1.3.5",
     "es6-promise-plugin": "4.2.2",
     "cordova-plugin-x-socialsharing": "5.6.5",
-    "cordova-sqlite-storage": "6.1.0",
-    "cordova-plugin-crop": "0.3.1"
+    "cordova-sqlite-storage": "6.1.0"
   };
 });

@@ -1,25 +1,33 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["focus-visible-f4ad4f1a-js"], {
-  /***/"./node_modules/@ionic/core/dist/esm/focus-visible-f4ad4f1a.js":
+  /***/
+  "./node_modules/@ionic/core/dist/esm/focus-visible-f4ad4f1a.js":
   /*!*********************************************************************!*\
     !*** ./node_modules/@ionic/core/dist/esm/focus-visible-f4ad4f1a.js ***!
     \*********************************************************************/
+
   /*! exports provided: startFocusVisible */
+
   /***/
   function node_modulesIonicCoreDistEsmFocusVisibleF4ad4f1aJs(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
     __webpack_require__.r(__webpack_exports__);
     /* harmony export (binding) */
+
+
     __webpack_require__.d(__webpack_exports__, "startFocusVisible", function () {
       return startFocusVisible;
     });
+
     var ION_FOCUSED = 'ion-focused';
     var ION_FOCUSABLE = 'ion-focusable';
     var FOCUS_KEYS = ['Tab', 'ArrowDown', 'Space', 'Escape', ' ', 'Shift', 'Enter', 'ArrowLeft', 'ArrowRight', 'ArrowUp'];
+
     var startFocusVisible = function startFocusVisible() {
       var currentFocus = [];
       var keyboardMode = true;
       var doc = document;
+
       var setFocus = function setFocus(elements) {
         currentFocus.forEach(function (el) {
           return el.classList.remove(ION_FOCUSED);
@@ -29,12 +37,15 @@
         });
         currentFocus = elements;
       };
+
       var pointerDown = function pointerDown() {
         keyboardMode = false;
         setFocus([]);
       };
+
       doc.addEventListener('keydown', function (ev) {
         keyboardMode = FOCUS_KEYS.includes(ev.key);
+
         if (!keyboardMode) {
           setFocus([]);
         }
@@ -45,6 +56,7 @@
             if (el.classList) {
               return el.classList.contains(ION_FOCUSABLE);
             }
+
             return false;
           });
           setFocus(toFocus);
@@ -58,8 +70,8 @@
       doc.addEventListener('touchstart', pointerDown);
       doc.addEventListener('mousedown', pointerDown);
     };
-
     /***/
+
   }
 }]);
 //# sourceMappingURL=focus-visible-f4ad4f1a-js-es5.js.map

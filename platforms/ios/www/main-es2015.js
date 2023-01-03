@@ -1527,9 +1527,9 @@ let Config = class Config {
         this.options = {};
         this.optionstwo = {};
         this.lang = 'en';
-        this.url = 'https://jarasim.com/';
-        this.consumerKey = 'ck_8531292b1829a03d2e19476432c18422846d9011';
-        this.consumerSecret = 'cs_b4dac7bf82b4c9d8b60ea9f51d90497a6106f23e';
+        this.url = 'https://headhunterssmokeshop.com/';
+        this.consumerKey = 'ck_6f5f858bdaf13458dca896ef62d58c4bfda2fed5';
+        this.consumerSecret = 'cs_680d821c15f0d1ef472d4fab29f4a4dcd3f87831';
         this.options.withCredentials = true;
         this.options.headers = {};
         this.optionstwo.withCredentials = false;
@@ -2199,7 +2199,7 @@ let HomePage = class HomePage {
     getSubCategories(id) {
         // const results = this.data.categories.filter(item => item.parent === parseInt(id));
         const results = this.data.categories;
-        // console.log('rs----', results)
+        console.log('rs----', results);
         return results;
     }
     getCategory(id) {

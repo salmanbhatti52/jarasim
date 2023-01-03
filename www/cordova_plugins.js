@@ -423,17 +423,6 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "id": "cordova-plugin-splashscreen.SplashScreen",
       "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
       "pluginId": "cordova-plugin-splashscreen",
-<<<<<<< Updated upstream
-      "clobbers": [
-        "navigator.splashscreen"
-      ]
-    },
-    {
-      "id": "cordova-plugin-statusbar.statusbar",
-      "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
-      "pluginId": "cordova-plugin-statusbar",
-=======
->>>>>>> Stashed changes
       "clobbers": [
         "navigator.splashscreen"
       ]

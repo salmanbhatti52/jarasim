@@ -111,97 +111,97 @@ export class LoginPage implements OnInit {
         const { data } = await modal.onWillDismiss();
         //this.navCtrl.navigateForward('/app/tabs/account/login/forgotten');
     }
-    // googleLogin() {
-    //     this.googleLogingInn = true;
-    //     this.presentLoading();
-    //     this.googlePlus.login({})
-    //         .then(res => {
-    //             this.googleStatus = res;
-    //             this.api.postItem('google_login', {
-    //                 "access_token": this.googleStatus.userId,
-    //                 "email": this.googleStatus.email,
-    //                 "first_name": this.googleStatus.givenName,
-    //                 "last_name": this.googleStatus.familyName,
-    //                 "display_name": this.googleStatus.displayName,
-    //                 "image": this.googleStatus.imageUrl
-    //             }).then(res => {
-    //                 this.status = res;
-    //                 if (this.status.errors) {
-    //                     this.errors = this.status.errors;
-    //                 } else if (this.status.data) {
-    //                     this.settings.customer.id = this.status.ID;
-    //                     if (this.platform.is('cordova')) {
-    //                         this.oneSignal.getIds().then((data: any) => {
-    //                             this.form.onesignal_user_id = data.userId;
-    //                             this.form.onesignal_push_token = data.pushToken;
-    //                         });
-    //                         this.api.postItem('update_user_notification', this.form).then(res => { });
-    //                     }
-    //                     if (this.status.allcaps.wc_product_vendors_admin_vendor || this.status.allcaps.dc_vendor || this.status.allcaps.seller || this.status.allcaps.wcfm_vendor) {
-    //                         this.settings.vendor = true;
-    //                     }
-    //                     if (this.status.allcaps.administrator) {
-    //                         this.settings.administrator = true;
-    //                     }
-    //                     this.close(true);
-    //                 }
-    //                 this.googleLogingInn = false;
-    //                 this.dismissLoading();
-    //             }, err => {
-    //                 this.googleLogingInn = false;
-    //                 this.dismissLoading();
-    //             });
-    //             this.googleLogingInn = false;
-    //         })
-    //         .catch(err => {
-    //             this.googleStatus = err;
-    //             this.googleLogingInn = false;
-    //             this.dismissLoading();
-    //         });
-    // }
-    // facebookLogin() {
-    //     this.facebookLogingInn = true;
-    //     this.facebook.login(['public_profile', 'email'])
-    //         .then((res: FacebookLoginResponse) => {
-    //             this.faceBookStatus = res;
-    //             this.presentLoading();
-    //             this.api.postItem('facebook_login', {
-    //                 "access_token": this.faceBookStatus.authResponse.accessToken,
-    //             }).then(res => {
-    //                 this.status = res;
-    //                 if (this.status.errors) {
-    //                     this.errors = this.status.errors;
-    //                 } else if (this.status.data) {
-    //                     this.settings.customer.id = this.status.ID;
-    //                     if (this.platform.is('cordova')) {
-    //                         this.oneSignal.getIds().then((data: any) => {
-    //                             this.form.onesignal_user_id = data.userId;
-    //                             this.form.onesignal_push_token = data.pushToken;
-    //                         });
-    //                         this.api.postItem('update_user_notification', this.form).then(res => { });
-    //                     }
-    //                     if (this.status.allcaps.wc_product_vendors_admin_vendor || this.status.allcaps.dc_vendor || this.status.allcaps.seller || this.status.allcaps.wcfm_vendor) {
-    //                         this.settings.vendor = true;
-    //                     }
-    //                     if (this.status.allcaps.administrator) {
-    //                         this.settings.administrator = true;
-    //                     }
-    //                     this.close(true);
-    //                 }
-    //                 this.facebookLogingInn = false;
-    //                 this.dismissLoading();
-    //             }, err => {
-    //                 this.facebookLogingInn = false;
-    //                 this.dismissLoading();
-    //             });
-    //             this.facebookLogingInn = false;
-    //         })
-    //         .catch(e => {
-    //             this.faceBookStatus = e;
-    //             this.facebookLogingInn = false;
-    //             this.dismissLoading();
-    //         });
-    // }
+    googleLogin() {
+        this.googleLogingInn = true;
+        this.presentLoading();
+        this.googlePlus.login({})
+            .then(res => {
+                this.googleStatus = res;
+                this.api.postItem('google_login', {
+                    "access_token": this.googleStatus.userId,
+                    "email": this.googleStatus.email,
+                    "first_name": this.googleStatus.givenName,
+                    "last_name": this.googleStatus.familyName,
+                    "display_name": this.googleStatus.displayName,
+                    "image": this.googleStatus.imageUrl
+                }).then(res => {
+                    this.status = res;
+                    if (this.status.errors) {
+                        this.errors = this.status.errors;
+                    } else if (this.status.data) {
+                        this.settings.customer.id = this.status.ID;
+                        if (this.platform.is('cordova')) {
+                            this.oneSignal.getIds().then((data: any) => {
+                                this.form.onesignal_user_id = data.userId;
+                                this.form.onesignal_push_token = data.pushToken;
+                            });
+                            this.api.postItem('update_user_notification', this.form).then(res => { });
+                        }
+                        if (this.status.allcaps.wc_product_vendors_admin_vendor || this.status.allcaps.dc_vendor || this.status.allcaps.seller || this.status.allcaps.wcfm_vendor) {
+                            this.settings.vendor = true;
+                        }
+                        if (this.status.allcaps.administrator) {
+                            this.settings.administrator = true;
+                        }
+                        this.close(true);
+                    }
+                    this.googleLogingInn = false;
+                    this.dismissLoading();
+                }, err => {
+                    this.googleLogingInn = false;
+                    this.dismissLoading();
+                });
+                this.googleLogingInn = false;
+            })
+            .catch(err => {
+                this.googleStatus = err;
+                this.googleLogingInn = false;
+                this.dismissLoading();
+            });
+    }
+    facebookLogin() {
+        this.facebookLogingInn = true;
+        this.facebook.login(['public_profile', 'email'])
+            .then((res: FacebookLoginResponse) => {
+                this.faceBookStatus = res;
+                this.presentLoading();
+                this.api.postItem('facebook_login', {
+                    "access_token": this.faceBookStatus.authResponse.accessToken,
+                }).then(res => {
+                    this.status = res;
+                    if (this.status.errors) {
+                        this.errors = this.status.errors;
+                    } else if (this.status.data) {
+                        this.settings.customer.id = this.status.ID;
+                        if (this.platform.is('cordova')) {
+                            this.oneSignal.getIds().then((data: any) => {
+                                this.form.onesignal_user_id = data.userId;
+                                this.form.onesignal_push_token = data.pushToken;
+                            });
+                            this.api.postItem('update_user_notification', this.form).then(res => { });
+                        }
+                        if (this.status.allcaps.wc_product_vendors_admin_vendor || this.status.allcaps.dc_vendor || this.status.allcaps.seller || this.status.allcaps.wcfm_vendor) {
+                            this.settings.vendor = true;
+                        }
+                        if (this.status.allcaps.administrator) {
+                            this.settings.administrator = true;
+                        }
+                        this.close(true);
+                    }
+                    this.facebookLogingInn = false;
+                    this.dismissLoading();
+                }, err => {
+                    this.facebookLogingInn = false;
+                    this.dismissLoading();
+                });
+                this.facebookLogingInn = false;
+            })
+            .catch(e => {
+                this.faceBookStatus = e;
+                this.facebookLogingInn = false;
+                this.dismissLoading();
+            });
+    }
     loginWithPhone() {
         this.phoneLogingInn = true;
         (<any>window).AccountKitPlugin.loginWithPhoneNumber({
