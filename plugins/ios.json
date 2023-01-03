@@ -23,9 +23,6 @@
     "cordova-plugin-apprate": {
       "PACKAGE_NAME": "com.jarasim.app"
     },
-    "cordova-plugin-crop": {
-      "PACKAGE_NAME": "com.jarasim.app"
-    },
     "cordova-plugin-device": {
       "PACKAGE_NAME": "com.jarasim.app"
     },
@@ -77,10 +74,6 @@
     "cordova-plugin-statusbar": {
       "PACKAGE_NAME": "com.jarasim.app"
     },
-    "cordova-plugin-telerik-imagepicker": {
-      "PHOTO_LIBRARY_USAGE_DESCRIPTION": " ",
-      "PACKAGE_NAME": "com.jarasim.app"
-    },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.jarasim.app"
     },
@@ -90,6 +83,9 @@
       "PACKAGE_NAME": "com.jarasim.app"
     },
     "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "com.jarasim.app"
+    },
+    "cordova-plugin-crop": {
       "PACKAGE_NAME": "com.jarasim.app"
     }
   },

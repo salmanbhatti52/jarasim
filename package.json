@@ -148,7 +148,6 @@
       "cordova-sqlite-storage": {},
       "cordova-plugin-file": {},
       "cordova-plugin-file-transfer": {},
-      "cordova-plugin-telerik-imagepicker": {},
       "cordova-plugin-crop": {}
     },
     "platforms": [
