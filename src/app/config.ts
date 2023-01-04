@@ -33,9 +33,13 @@ export class Config {
         // this.consumerKey = 'ck_6f5f858bdaf13458dca896ef62d58c4bfda2fed5';
         // this.consumerSecret = 'cs_680d821c15f0d1ef472d4fab29f4a4dcd3f87831';
         
-        this.url = 'http://jarasim.com/';
-        this.consumerKey = 'ck_c78f76d778916505958182d94a6140074ed64493';
-        this.consumerSecret = 'cs_f2f1ee4b03158d99503bc32e945eee48ac8e08d5';
+        // this.url = 'http://jarasim.com/';
+        // this.consumerKey = 'ck_c78f76d778916505958182d94a6140074ed64493';
+        // this.consumerSecret = 'cs_f2f1ee4b03158d99503bc32e945eee48ac8e08d5';
+
+        this.url = 'https://jarasim.com/';
+        this.consumerKey = 'ck_cfee64b6c02ef6716484b235de79920e3c44fcaf';
+        this.consumerSecret = 'cs_7c6c454b4aa611127c2da931e0e7ae6dc14657fb';
 
         this.options.withCredentials = true;
         this.options.headers = {};

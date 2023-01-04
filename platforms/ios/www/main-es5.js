@@ -2241,10 +2241,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.avatar = "assets/image/shop-icon.jpg";
         this.options = {};
         this.optionstwo = {};
-        this.lang = 'en';
-        this.url = 'http://jarasim.com/';
-        this.consumerKey = 'ck_c78f76d778916505958182d94a6140074ed64493';
-        this.consumerSecret = 'cs_f2f1ee4b03158d99503bc32e945eee48ac8e08d5';
+        this.lang = 'en'; // this.url = 'http://jarasim.com/';
+        // this.consumerKey = 'ck_c78f76d778916505958182d94a6140074ed64493';
+        // this.consumerSecret = 'cs_f2f1ee4b03158d99503bc32e945eee48ac8e08d5';
+
+        this.url = 'https://jarasim.com/';
+        this.consumerKey = 'ck_cfee64b6c02ef6716484b235de79920e3c44fcaf';
+        this.consumerSecret = 'cs_7c6c454b4aa611127c2da931e0e7ae6dc14657fb';
         this.options.withCredentials = true;
         this.options.headers = {};
         this.optionstwo.withCredentials = false;
