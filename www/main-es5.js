@@ -2235,13 +2235,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       function Config() {
         _classCallCheck(this, Config);
 
+        // this.url = 'https://headhunterssmokeshop.com/';
+        // this.consumerKey = 'ck_6f5f858bdaf13458dca896ef62d58c4bfda2fed5';
+        // this.consumerSecret = 'cs_680d821c15f0d1ef472d4fab29f4a4dcd3f87831';
         this.avatar = "assets/image/shop-icon.jpg";
         this.options = {};
         this.optionstwo = {};
         this.lang = 'en';
-        this.url = 'https://headhunterssmokeshop.com/';
-        this.consumerKey = 'ck_6f5f858bdaf13458dca896ef62d58c4bfda2fed5';
-        this.consumerSecret = 'cs_680d821c15f0d1ef472d4fab29f4a4dcd3f87831';
+        this.url = 'http://jarasim.com/';
+        this.consumerKey = 'ck_c78f76d778916505958182d94a6140074ed64493';
+        this.consumerSecret = 'cs_f2f1ee4b03158d99503bc32e945eee48ac8e08d5';
         this.options.withCredentials = true;
         this.options.headers = {};
         this.optionstwo.withCredentials = false;

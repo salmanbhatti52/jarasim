@@ -151,8 +151,8 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "runs": true
     },
     {
-      "id": "cordova-plugin-file.androidFileSystem",
-      "file": "plugins/cordova-plugin-file/www/android/FileSystem.js",
+      "id": "cordova-plugin-file.iosFileSystem",
+      "file": "plugins/cordova-plugin-file/www/ios/FileSystem.js",
       "pluginId": "cordova-plugin-file",
       "merges": [
         "FileSystem"
@@ -248,7 +248,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     },
     {
       "id": "cordova-plugin-android-permissions.Permissions",
-      "file": "plugins/cordova-plugin-android-permissions/www/permissions.js",
+      "file": "plugins/cordova-plugin-android-permissions/www/permissions-dummy.js",
       "pluginId": "cordova-plugin-android-permissions",
       "clobbers": [
         "cordova.plugins.permissions"
@@ -265,14 +265,6 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     {
       "id": "cordova-plugin-dialogs.notification",
       "file": "plugins/cordova-plugin-dialogs/www/notification.js",
-      "pluginId": "cordova-plugin-dialogs",
-      "merges": [
-        "navigator.notification"
-      ]
-    },
-    {
-      "id": "cordova-plugin-dialogs.notification_android",
-      "file": "plugins/cordova-plugin-dialogs/www/android/notification.js",
       "pluginId": "cordova-plugin-dialogs",
       "merges": [
         "navigator.notification"
@@ -318,6 +310,14 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "runs": true
     },
     {
+      "id": "cordova-plugin-crop.CropPlugin",
+      "file": "plugins/cordova-plugin-crop/www/crop.js",
+      "pluginId": "cordova-plugin-crop",
+      "clobbers": [
+        "plugins.crop"
+      ]
+    },
+    {
       "id": "cordova-plugin-device.device",
       "file": "plugins/cordova-plugin-device/www/device.js",
       "pluginId": "cordova-plugin-device",
@@ -358,18 +358,36 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       ]
     },
     {
-      "id": "cordova-plugin-geolocation.geolocation",
-      "file": "plugins/cordova-plugin-geolocation/www/android/geolocation.js",
+      "id": "cordova-plugin-geolocation.Coordinates",
+      "file": "plugins/cordova-plugin-geolocation/www/Coordinates.js",
       "pluginId": "cordova-plugin-geolocation",
       "clobbers": [
-        "navigator.geolocation"
+        "Coordinates"
       ]
     },
     {
       "id": "cordova-plugin-geolocation.PositionError",
       "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
       "pluginId": "cordova-plugin-geolocation",
-      "runs": true
+      "clobbers": [
+        "PositionError"
+      ]
+    },
+    {
+      "id": "cordova-plugin-geolocation.Position",
+      "file": "plugins/cordova-plugin-geolocation/www/Position.js",
+      "pluginId": "cordova-plugin-geolocation",
+      "clobbers": [
+        "Position"
+      ]
+    },
+    {
+      "id": "cordova-plugin-geolocation.geolocation",
+      "file": "plugins/cordova-plugin-geolocation/www/geolocation.js",
+      "pluginId": "cordova-plugin-geolocation",
+      "clobbers": [
+        "navigator.geolocation"
+      ]
     },
     {
       "id": "cordova-plugin-googleplus.GooglePlus",
@@ -389,7 +407,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     },
     {
       "id": "cordova-plugin-ionic-keyboard.keyboard",
-      "file": "plugins/cordova-plugin-ionic-keyboard/www/android/keyboard.js",
+      "file": "plugins/cordova-plugin-ionic-keyboard/www/ios/keyboard.js",
       "pluginId": "cordova-plugin-ionic-keyboard",
       "clobbers": [
         "window.Keyboard"
@@ -404,6 +422,14 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       ]
     },
     {
+      "id": "cordova-plugin-ionic-webview.ios-wkwebview-exec",
+      "file": "plugins/cordova-plugin-ionic-webview/src/www/ios/ios-wkwebview-exec.js",
+      "pluginId": "cordova-plugin-ionic-webview",
+      "clobbers": [
+        "cordova.exec"
+      ]
+    },
+    {
       "id": "cordova-plugin-nativegeocoder.NativeGeocoder",
       "file": "plugins/cordova-plugin-nativegeocoder/www/NativeGeocoder.js",
       "pluginId": "cordova-plugin-nativegeocoder",
@@ -413,18 +439,10 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     },
     {
       "id": "cordova-plugin-request-location-accuracy.RequestLocationAccuracy",
-      "file": "plugins/cordova-plugin-request-location-accuracy/www/android/RequestLocationAccuracy.js",
+      "file": "plugins/cordova-plugin-request-location-accuracy/www/ios/RequestLocationAccuracy.js",
       "pluginId": "cordova-plugin-request-location-accuracy",
       "clobbers": [
         "cordova.plugins.locationAccuracy"
-      ]
-    },
-    {
-      "id": "cordova-plugin-splashscreen.SplashScreen",
-      "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
-      "pluginId": "cordova-plugin-splashscreen",
-      "clobbers": [
-        "navigator.splashscreen"
       ]
     },
     {
@@ -433,6 +451,14 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "pluginId": "cordova-plugin-statusbar",
       "clobbers": [
         "window.StatusBar"
+      ]
+    },
+    {
+      "id": "cordova-plugin-telerik-imagepicker.ImagePicker",
+      "file": "plugins/cordova-plugin-telerik-imagepicker/www/imagepicker.js",
+      "pluginId": "cordova-plugin-telerik-imagepicker",
+      "clobbers": [
+        "plugins.imagePicker"
       ]
     },
     {
@@ -456,14 +482,6 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "SQLitePlugin"
       ]
-    },
-    {
-      "id": "cordova-plugin-crop.CropPlugin",
-      "file": "plugins/cordova-plugin-crop/www/crop.js",
-      "pluginId": "cordova-plugin-crop",
-      "clobbers": [
-        "plugins.crop"
-      ]
     }
   ];
   module.exports.metadata = {
@@ -476,6 +494,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-dialogs": "2.0.2",
     "cordova-plugin-nativestorage": "2.3.2",
     "cordova-plugin-apprate": "1.7.2",
+    "cordova-plugin-crop": "0.3.1",
     "cordova-plugin-device": "2.0.3",
     "cordova-plugin-email-composer": "0.10.0",
     "cordova-plugin-facebook4": "6.4.0",
@@ -489,10 +508,10 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-request-location-accuracy": "2.3.0",
     "cordova-plugin-splashscreen": "6.0.0",
     "cordova-plugin-statusbar": "3.0.0",
+    "cordova-plugin-telerik-imagepicker": "2.3.5",
     "cordova-plugin-whitelist": "1.3.5",
     "es6-promise-plugin": "4.2.2",
     "cordova-plugin-x-socialsharing": "5.6.5",
-    "cordova-sqlite-storage": "6.1.0",
-    "cordova-plugin-crop": "0.3.1"
+    "cordova-sqlite-storage": "6.1.0"
   };
 });
